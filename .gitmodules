@@ -1,3 +1,6 @@
 [submodule "AGE/vendor/spdlog"]
 	path = AGE/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "AGE/vendor/GLFW"]
+	path = AGE/vendor/GLFW
+	url = https://github.com/theCherno/glfw

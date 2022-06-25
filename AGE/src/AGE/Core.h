@@ -10,4 +10,13 @@
 	#error AGE only support Windows!
 #endif
 
+#ifdef AGE_ENABLE_ASSERTS
+	#define AGE_ASSERT(x, ...) {if(!(x)) {AGE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define AGE_CORE_ASSERT(x, ...) {if(!(x)) {AGE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define AGE_ASSERT(x, ...)
+	#define AGE_CORE_ASSERT(x, ...)
+#endif 
+
+
 #define BIT(x) (1 << x)

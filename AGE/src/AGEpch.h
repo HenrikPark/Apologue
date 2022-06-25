@@ -13,6 +13,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+//#include "AGE/Core.h"
+#include "AGE/Log.h"
+
 
 //Window Specific
 
