@@ -1,36 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="AGE">
+      <UniqueIdentifier>{D2D0870B-3EDA-877C-C755-9E7C335E937C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="AGE\Events">
+      <UniqueIdentifier>{761C1404-62D4-5551-CBDB-2EADB7B2F041}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\AGE\Core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="src\AGE.h" />
     <ClInclude Include="src\AGE\Application.h">
-      <Filter>Header Files</Filter>
+      <Filter>AGE</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\AGE\Core.h">
+      <Filter>AGE</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\EntryPoint.h">
-      <Filter>Header Files</Filter>
+      <Filter>AGE</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\Events\ApplicationEvent.h">
+      <Filter>AGE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Events\Event.h">
+      <Filter>AGE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Events\KeyEvent.h">
+      <Filter>AGE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Events\MouseEvent.h">
+      <Filter>AGE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Log.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGEpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AGE\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>AGE</Filter>
     </ClCompile>
+    <ClCompile Include="src\AGE\Log.cpp">
+      <Filter>AGE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGEpch.cpp" />
   </ItemGroup>
 </Project>
