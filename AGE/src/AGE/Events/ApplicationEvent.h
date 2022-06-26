@@ -2,6 +2,8 @@
 
 #include "Event.h"
 
+#include <sstream>
+
 namespace AGE
 {
 	class AGE_API WindowResizeEvent : public Event
