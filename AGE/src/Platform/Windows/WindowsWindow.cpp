@@ -108,6 +108,14 @@ namespace AGE
 
 		});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode) 
+		{
+				WindowsData& data = *(WindowsData*)glfwGetWindowUserPointer(window);
+
+				KeyTypedEvent event(keycode);
+				data.EventCallback(event);
+		});
+
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) 
 		{
 				WindowsData& data = *(WindowsData*)glfwGetWindowUserPointer(window);
