@@ -7,8 +7,14 @@
     <Filter Include="AGE\Events">
       <UniqueIdentifier>{761C1404-62D4-5551-CBDB-2EADB7B2F041}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AGE\ImGui">
+      <UniqueIdentifier>{7C1B723E-E885-26B5-31C4-D75A9D6D040A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGl">
+      <UniqueIdentifier>{3E7D2C1D-AA08-9AE1-B319-1DD61F24F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,15 @@
     <ClInclude Include="src\AGE\Events\MouseEvent.h">
       <Filter>AGE\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h">
+      <Filter>AGE\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Layer.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\LayerStack.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Log.h">
       <Filter>AGE</Filter>
     </ClInclude>
@@ -44,6 +59,9 @@
       <Filter>AGE</Filter>
     </ClInclude>
     <ClInclude Include="src\AGEpch.h" />
+    <ClInclude Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGl</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -52,10 +70,22 @@
     <ClCompile Include="src\AGE\Application.cpp">
       <Filter>AGE</Filter>
     </ClCompile>
+    <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp">
+      <Filter>AGE\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Layer.cpp">
+      <Filter>AGE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\LayerStack.cpp">
+      <Filter>AGE</Filter>
+    </ClCompile>
     <ClCompile Include="src\AGE\Log.cpp">
       <Filter>AGE</Filter>
     </ClCompile>
     <ClCompile Include="src\AGEpch.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGl</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>

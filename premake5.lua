@@ -14,8 +14,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "AGE/vendor/GLFW/include"
+IncludeDir["Glad"] = "AGE/vendor/Glad/include"
+IncludeDir["ImGui"] = "AGE/vendor/imgui"
 
 include "AGE/vendor/GLFW"
+include "AGE/vendor/Glad"
+include "AGE/vendor/imgui"
 
 project "AGE"
 	location "AGE"
@@ -38,12 +42,16 @@ project "AGE"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",		
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -55,7 +63,8 @@ project "AGE"
 		defines
 		{
 			"AGE_PLATFORM_WINDOWS",
-			"AGE_BUILD_DLL"
+			"AGE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -65,14 +74,17 @@ project "AGE"
 
 	filter "configurations:Debug"
 		defines "AGE_DEBUG"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"
+		buildoptions "/MD"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "AGE_DIST"
+		buildoptions "/MD"
 		optimize "on"
 
 project "Sandbox"
@@ -112,12 +124,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AGE_DEBUG"
+		buildoptions "/MDd"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"
+		buildoptions "/MD"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "AGE_DIST"
+		buildoptions "/MD"
 		optimize "on"

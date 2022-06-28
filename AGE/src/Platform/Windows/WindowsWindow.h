@@ -4,6 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
+
+
 namespace AGE
 {
 	class WindowsWindow : public Window

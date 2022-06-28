@@ -4,7 +4,11 @@
 
 //#include <stdio.h>
 #include "AGE/Application.h"
+#include "AGE/Layer.h"
 #include "AGE/Log.h"
+
+#include "AGE/ImGui/ImGuiLayer.h"
+
 // --- Entry Point -------------------------
 #include "AGE/EntryPoint.h"
 // -----------------------------------------
