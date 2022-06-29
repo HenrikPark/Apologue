@@ -1,7 +1,7 @@
 workspace "AGE"
 
 	architecture "x64"
-
+	startproject "Sandbox"
 	configurations
 	{	
 		"Debug",
@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "AGE/vendor/GLFW/include"
 IncludeDir["Glad"] = "AGE/vendor/Glad/include"
 IncludeDir["ImGui"] = "AGE/vendor/imgui"
 
+
 include "AGE/vendor/GLFW"
 include "AGE/vendor/Glad"
 include "AGE/vendor/imgui"
@@ -25,6 +26,7 @@ project "AGE"
 	location "AGE"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,8 +58,7 @@ project "AGE"
 	}
 
 	filter "system:windows"
-		cppdialect "c++17"
-		staticruntime "on"
+		cppdialect "c++17"		
 		systemversion "latest"
 
 		defines
@@ -69,28 +70,29 @@ project "AGE"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")			
 		}
 
 	filter "configurations:Debug"
 		defines "AGE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "AGE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "consoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -113,8 +115,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "c++17"
-		staticruntime "on"
+		cppdialect "c++17"		
 		systemversion "latest"
 
 		defines
@@ -124,15 +125,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AGE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
 		defines "AGE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "on"
