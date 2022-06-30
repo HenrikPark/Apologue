@@ -5,6 +5,8 @@
 
 #include <glad/glad.h>
 
+#include "Input.h"
+
 namespace AGE
 {
 
@@ -63,6 +65,7 @@ namespace AGE
 				layer->OnUpdate();
 			}
 
+			
 			m_Window->OnUpdate();
 		}
 	}

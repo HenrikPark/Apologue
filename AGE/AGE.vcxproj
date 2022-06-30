@@ -158,12 +158,16 @@
     <ClInclude Include="src\AGE\Events\KeyEvent.h" />
     <ClInclude Include="src\AGE\Events\MouseEvent.h" />
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\AGE\Input.h" />
+    <ClInclude Include="src\AGE\KeyCodes.h" />
     <ClInclude Include="src\AGE\Layer.h" />
     <ClInclude Include="src\AGE\LayerStack.h" />
     <ClInclude Include="src\AGE\Log.h" />
+    <ClInclude Include="src\AGE\MouseButtonCodes.h" />
     <ClInclude Include="src\AGE\Window.h" />
     <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +180,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

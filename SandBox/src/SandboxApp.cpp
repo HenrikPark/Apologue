@@ -11,12 +11,15 @@ public:
 
 	void OnUpdate() override
 	{
-		AGE_INFO("ExampleLayer::Update");
+		if (AGE::Input::IsKeyPressed(AGE_KEY_TAB))
+		{
+			AGE_TRACE("Tab is Pressed!");
+		}
 	}
 
 	void OnEvent(AGE::Event& event) override
 	{
-		AGE_TRACE("{0}", event);
+		//AGE_TRACE("{0}", event);
 	}
 };
 

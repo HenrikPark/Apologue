@@ -46,6 +46,12 @@
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h">
       <Filter>AGE\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\Input.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\KeyCodes.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Layer.h">
       <Filter>AGE</Filter>
     </ClInclude>
@@ -55,12 +61,18 @@
     <ClInclude Include="src\AGE\Log.h">
       <Filter>AGE</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\MouseButtonCodes.h">
+      <Filter>AGE</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Window.h">
       <Filter>AGE</Filter>
     </ClInclude>
     <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
@@ -85,6 +97,9 @@
     <ClCompile Include="src\AGEpch.cpp" />
     <ClCompile Include="src\Platform\OpenGl\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
