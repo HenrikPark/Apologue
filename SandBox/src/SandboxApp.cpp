@@ -1,12 +1,15 @@
 #include <AGE.h>
 
 
+
+
+
 class ExampleLayer : public AGE::Layer
 {
 public:
 	ExampleLayer()
 		:Layer("Example")
-	{
+	{	
 	}
 
 	void OnUpdate() override
