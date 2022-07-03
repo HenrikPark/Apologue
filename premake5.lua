@@ -25,9 +25,10 @@ include "AGE/vendor/imgui"
 
 project "AGE"
 	location "AGE"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "c++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -41,6 +42,10 @@ project "AGE"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+	}
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -61,8 +66,7 @@ project "AGE"
 		"opengl32.lib"
 	}
 
-	filter "system:windows"
-		cppdialect "c++17"		
+	filter "system:windows"				
 		systemversion "latest"
 
 		defines
@@ -70,11 +74,6 @@ project "AGE"
 			"AGE_PLATFORM_WINDOWS",
 			"AGE_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
-		}
-
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")			
 		}
 
 	filter "configurations:Debug"
@@ -96,7 +95,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "consoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "c++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -111,6 +111,7 @@ project "Sandbox"
 	{
 		"AGE/vendor/spdlog/include",
 		"AGE/src",
+		"AGE/vendor",
 		"%{IncludeDir.glm}"
 	}
 
@@ -119,8 +120,7 @@ project "Sandbox"
 		"AGE"
 	}
 
-	filter "system:windows"
-		cppdialect "c++17"		
+	filter "system:windows"				
 		systemversion "latest"
 
 		defines

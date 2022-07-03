@@ -7,6 +7,8 @@
 #include "AGE/Events/Event.h"
 #include "AGE/Events/ApplicationEvent.h"
 
+#include "AGE/ImGui/ImGuiLayer.h"
+
 
 namespace AGE
 {
@@ -31,6 +33,7 @@ namespace AGE
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

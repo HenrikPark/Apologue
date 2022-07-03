@@ -1,14 +1,19 @@
 #pragma once
 
 #ifdef AGE_PLATFORM_WINDOWS
+#if AGE_DYNAMIC_LINK
 	#ifdef AGE_BUILD_DLL
 		#define AGE_API __declspec(dllexport)
 	#else
 		#define AGE_API __declspec(dllimport)
 	#endif
 #else
+#define AGE_API
+#endif
+#else
 	#error AGE only support Windows!
 #endif
+
 
 #ifdef AGE_DEBUG
 	#define  AGE_ENABLE_ASSERTS

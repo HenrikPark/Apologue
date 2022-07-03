@@ -1,6 +1,6 @@
 #include <AGE.h>
 
-
+#include "imgui/imgui.h"
 
 
 
@@ -20,6 +20,15 @@ public:
 		}
 	}
 
+	virtual void OnImGuiRender() override
+	{
+
+		//Läxan avsnitt 22
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+
 	void OnEvent(AGE::Event& event) override
 	{
 		//AGE_TRACE("{0}", event);
@@ -33,7 +42,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new AGE::ImGuiLayer());
+		
 	}
 	~Sandbox()
 	{
