@@ -1,8 +1,10 @@
 #pragma once
 
 #include "AGE/Window.h"
+#include "AGE/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 
 
@@ -31,6 +33,7 @@ namespace AGE
 		virtual void Shutdown();
 
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowsData
 		{
