@@ -9,6 +9,8 @@
 
 #include "AGE/ImGui/ImGuiLayer.h"
 
+#include "AGE/Renderer/Shader.h"
+
 
 namespace AGE
 {
@@ -36,6 +38,10 @@ namespace AGE
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+
+		std::unique_ptr<Shader> m_Shader;
 
 		static Application* s_Instance;
 	};
