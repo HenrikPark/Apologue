@@ -11,11 +11,11 @@ namespace AGE
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None:
+		case RendererAPI::API::None:
 				AGE_CORE_ASSERT(false, "RendererAPI::None is currently not supported");
 				return nullptr;
 				break;
-			case RendererAPI::OpenGl:
+			case RendererAPI::API::OpenGL:
 				return new OpenGLVertexBuffer(vertices,size);
 				break;
 
@@ -30,11 +30,11 @@ namespace AGE
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None:
+		case RendererAPI::API::None:
 			AGE_CORE_ASSERT(false, "RendererAPI::None is currently not supported");
 			return nullptr;
 			break;
-		case RendererAPI::OpenGl:
+		case RendererAPI::API::OpenGL:
 			return new OpenGLIndexBuffer(indices, size);
 			break;
 

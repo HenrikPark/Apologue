@@ -1,20 +1,19 @@
 #pragma once
 
+#include "RenderCommand.h"
 
 namespace AGE
 {
-	enum class RendererAPI
-	{
-		None = 0,
-		OpenGl = 1	
-	};
-
 	class Renderer
 	{
 	public:
-		inline static RendererAPI GetAPI() { return s_RendererAPI; }
-	private:
-		static RendererAPI s_RendererAPI;
+		static void BeginScene();
+		static void EndScene();
+
+		static void Submit(std::shared_ptr<VertexArray>& vertexArray);
+
+		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
+	private:	
 
 	};
 }
