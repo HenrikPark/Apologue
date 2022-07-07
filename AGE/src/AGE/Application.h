@@ -9,16 +9,10 @@
 
 #include "AGE/ImGui/ImGuiLayer.h"
 
-#include "AGE/Renderer/Shader.h"
-#include "AGE/Renderer/Buffer.h"
-#include "AGE/Renderer/VertexArray.h"
-
-#include "AGE/Renderer/OrthographicCamera.h"
-
 
 namespace AGE
 {
-	class AGE_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -41,16 +35,7 @@ namespace AGE
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
-		LayerStack m_LayerStack;		
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray>  m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray>  m_SquareVA;
-
-		OrthographicCamera m_Camera;
-
+		LayerStack m_LayerStack;	
 	private:
 		static Application* s_Instance;
 	};

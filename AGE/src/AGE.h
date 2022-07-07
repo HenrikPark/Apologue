@@ -13,6 +13,18 @@
 
 #include "AGE/ImGui/ImGuiLayer.h"
 
+// --- Renderer-----------------------------
+#include "AGE/Renderer/Renderer.h"
+#include "AGE/Renderer/RenderCommand.h"
+
+#include "AGE/Renderer/Buffer.h"
+#include "AGE/Renderer/Shader.h"
+#include "AGE/Renderer/VertexArray.h"
+
+#include "AGE/Renderer/OrthographicCamera.h"
+// -----------------------------------------
+
+
 // --- Entry Point -------------------------
 #include "AGE/EntryPoint.h"
 // -----------------------------------------
