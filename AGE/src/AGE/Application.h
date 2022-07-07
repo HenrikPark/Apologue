@@ -11,8 +11,9 @@
 
 #include "AGE/Renderer/Shader.h"
 #include "AGE/Renderer/Buffer.h"
-
 #include "AGE/Renderer/VertexArray.h"
+
+#include "AGE/Renderer/OrthographicCamera.h"
 
 
 namespace AGE
@@ -48,6 +49,9 @@ namespace AGE
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray>  m_SquareVA;
 
+		OrthographicCamera m_Camera;
+
+	private:
 		static Application* s_Instance;
 	};
 

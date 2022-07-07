@@ -157,6 +157,7 @@
     <ClInclude Include="src\AGE\MouseButtonCodes.h" />
     <ClInclude Include="src\AGE\Renderer\Buffer.h" />
     <ClInclude Include="src\AGE\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\AGE\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\AGE\Renderer\RenderCommand.h" />
     <ClInclude Include="src\AGE\Renderer\Renderer.h" />
     <ClInclude Include="src\AGE\Renderer\RendererAPI.h" />
@@ -597,6 +598,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\AGE\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\AGE\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\AGE\Renderer\Renderer.cpp" />
     <ClCompile Include="src\AGE\Renderer\RendererAPI.cpp" />
