@@ -143,6 +143,7 @@
     <ClInclude Include="src\AGE.h" />
     <ClInclude Include="src\AGE\Application.h" />
     <ClInclude Include="src\AGE\Core.h" />
+    <ClInclude Include="src\AGE\Core\Timestep.h" />
     <ClInclude Include="src\AGE\EntryPoint.h" />
     <ClInclude Include="src\AGE\Events\ApplicationEvent.h" />
     <ClInclude Include="src\AGE\Events\Event.h" />

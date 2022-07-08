@@ -129,31 +129,34 @@ public:
 		m_BlueShader.reset(new AGE::Shader(BlueShadervertexSrc, BlueShaderfragmentSrc));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(AGE::Timestep ts) override
 	{
+		
+		float aDeltaTime = ts; //TGA Way to do it
+
 		if (AGE::Input::IsKeyPressed(AGE_KEY_LEFT))
 		{
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * aDeltaTime;
 		}
 		else if (AGE::Input::IsKeyPressed(AGE_KEY_RIGHT))
 		{
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * aDeltaTime;
 		}
 		if (AGE::Input::IsKeyPressed(AGE_KEY_UP))
 		{
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * aDeltaTime;
 		}
 		else if (AGE::Input::IsKeyPressed(AGE_KEY_DOWN))
 		{
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * aDeltaTime;
 		}
 		if (AGE::Input::IsKeyPressed(AGE_KEY_A))
 		{
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * aDeltaTime;
 		}
 		else if (AGE::Input::IsKeyPressed(AGE_KEY_D))
 		{
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * aDeltaTime;
 		}
 
 
@@ -189,10 +192,10 @@ private:
 
 	AGE::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.01f;
+	float m_CameraMoveSpeed = 0.9f;
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 0.1f;
+	float m_CameraRotationSpeed = 20.0f;
 };
 
 
