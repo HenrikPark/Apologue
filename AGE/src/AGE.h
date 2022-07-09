@@ -21,6 +21,7 @@
 
 #include "AGE/Renderer/Buffer.h"
 #include "AGE/Renderer/Shader.h"
+#include "AGE/Renderer/Texture.h"
 #include "AGE/Renderer/VertexArray.h"
 
 #include "AGE/Renderer/OrthographicCamera.h"

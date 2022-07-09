@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "AGE/vendor/GLFW/include"
 IncludeDir["Glad"] = "AGE/vendor/Glad/include"
 IncludeDir["ImGui"] = "AGE/vendor/imgui"
 IncludeDir["glm"] = "AGE/vendor/glm"
+IncludeDir["stb_image"] = "AGE/vendor/stb_image"
 
 
 include "AGE/vendor/GLFW"
@@ -40,6 +41,8 @@ project "AGE"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
@@ -55,7 +58,8 @@ project "AGE"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",		
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
