@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef AGE_PLATFORM_WINDOWS
 #if AGE_DYNAMIC_LINK
 	#ifdef AGE_BUILD_DLL
@@ -32,3 +34,11 @@
 
 
 #define AGE_BIND_EVENT_FN(fn) std::bind(&fn,this, std::placeholders::_1)
+
+namespace AGE
+{
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+}

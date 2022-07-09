@@ -22,7 +22,7 @@ public:
 			 0.0f, 0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<AGE::VertexBuffer> vertexBuffer;
+		AGE::Ref<AGE::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(AGE::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		AGE::BufferLayout layout = {
@@ -34,7 +34,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0,1,2 };
-		std::shared_ptr<AGE::IndexBuffer> indexBuffer;
+		AGE::Ref<AGE::IndexBuffer> indexBuffer;
 		indexBuffer.reset(AGE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -47,7 +47,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<AGE::VertexBuffer> squareVB;
+		AGE::Ref<AGE::VertexBuffer> squareVB;
 		squareVB.reset(AGE::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ AGE::ShaderDataType::Float3, "a_Position" }
@@ -55,7 +55,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<AGE::IndexBuffer> squareIB;
+		AGE::Ref<AGE::IndexBuffer> squareIB;
 		squareIB.reset(AGE::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -207,11 +207,11 @@ public:
 
 
 private:
-	std::shared_ptr<AGE::Shader> m_Shader;
-	std::shared_ptr<AGE::VertexArray>  m_VertexArray;
-
-	std::shared_ptr<AGE::Shader> m_FlatColorShader;
-	std::shared_ptr<AGE::VertexArray>  m_SquareVA;
+	AGE::Ref<AGE::Shader> m_Shader;
+	AGE::Ref<AGE::VertexArray>  m_VertexArray;
+	
+	AGE::Ref<AGE::Shader> m_FlatColorShader;
+	AGE::Ref<AGE::VertexArray>  m_SquareVA;
 
 	AGE::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
