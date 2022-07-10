@@ -1,9 +1,12 @@
 #include <AGE.h>
 
 #include <Platform/OpenGl/OpenGLShader.h>
+
 #include "imgui/imgui.h"
+
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/glm/gtc/type_ptr.hpp>
+
 
 
 
@@ -97,7 +100,7 @@ public:
 
 		)";
 
-		m_Shader.reset(AGE::Shader::Create(vertexSrc, fragmentSrc));		
+		m_Shader = AGE::Shader::Create("VertexPosColor",vertexSrc, fragmentSrc);
 
 		std::string flatColorShadervertexSrc = R"(
 			#version 330 core
@@ -135,15 +138,15 @@ public:
 
 
 
-		m_FlatColorShader.reset(AGE::Shader::Create(flatColorShadervertexSrc, flatColorShaderfragmentSrc));
+		m_FlatColorShader = AGE::Shader::Create("FlatColor",flatColorShadervertexSrc, flatColorShaderfragmentSrc);
 
-		m_TextureShader.reset(AGE::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_shaderLibrary.Load( "assets/shaders/Texture.glsl");
 
 		m_Texture = (AGE::Texture2D::Create("assets/textures/Checkerboard.png"));
 		m_AGELogoTexture = (AGE::Texture2D::Create("assets/textures/AGELogo.png"));
 
-		std::dynamic_pointer_cast<AGE::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<AGE::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<AGE::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<AGE::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(AGE::Timestep ts) override
@@ -199,11 +202,13 @@ public:
 			}
 		}
 
+		auto textureShader = m_shaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		AGE::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		AGE::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		m_AGELogoTexture->Bind();
-		AGE::Renderer::Submit(m_TextureShader, m_SquareVA,glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		AGE::Renderer::Submit(textureShader, m_SquareVA,glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		//triangle
 		//AGE::Renderer::Submit(m_Shader, m_VertexArray);
@@ -224,10 +229,12 @@ public:
 
 
 private:
+	
+	AGE::ShaderLibrary m_shaderLibrary;
 	AGE::Ref<AGE::Shader> m_Shader;
 	AGE::Ref<AGE::VertexArray>  m_VertexArray;
 	
-	AGE::Ref<AGE::Shader> m_FlatColorShader, m_TextureShader;
+	AGE::Ref<AGE::Shader> m_FlatColorShader;
 	AGE::Ref<AGE::VertexArray>  m_SquareVA;
 
 	AGE::Ref<AGE::Texture2D> m_Texture;
