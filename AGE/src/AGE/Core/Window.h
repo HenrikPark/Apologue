@@ -2,7 +2,7 @@
 
 #include "AGEpch.h"
 
-#include "AGE/Core.h"
+#include "AGE/Core/Core.h"
 #include "AGE/Events/Event.h"
 
 namespace AGE

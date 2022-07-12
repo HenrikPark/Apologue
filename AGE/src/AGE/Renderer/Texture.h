@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "AGE/Core.h"
+#include "AGE/Core/Core.h"
 namespace AGE
 {
 	class Texture

@@ -14,7 +14,7 @@
 #include <unordered_set>
 
 //#include "AGE/Core.h"
-#include "AGE/Log.h"
+#include "AGE/Core/Log.h"
 
 
 //Window Specific

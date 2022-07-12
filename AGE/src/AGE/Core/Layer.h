@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AGE/Core.h"
+#include "AGE/Core/Core.h"
 #include "AGE/Core/Timestep.h"
 #include "AGE/Events/Event.h"
 

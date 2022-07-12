@@ -1,7 +1,7 @@
 #include "AGEpch.h"
 #include "WindowsInput.h"
 
-#include "AGE/Application.h"
+#include "AGE/Core/Application.h"
 #include <GLFW/glfw3.h>
 namespace AGE
 {

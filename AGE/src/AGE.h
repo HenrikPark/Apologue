@@ -3,15 +3,16 @@
 //For use by AGE applications
 
 //#include <stdio.h>
-#include "AGE/Application.h"
-#include "AGE/Layer.h"
-#include "AGE/Log.h"
+#include "AGE/Core/Application.h"
+#include "AGE/Core/Layer.h"
+#include "AGE/Core/Log.h"
 
 #include "Age/Core/Timestep.h"
 
-#include "AGE/Input.h"
-#include "AGE/MouseButtonCodes.h"
-#include "AGE/KeyCodes.h"
+#include "AGE/Core/Input.h"
+#include "AGE/Core/KeyCodes.h"
+#include "AGE/Core/MouseButtonCodes.h"
+#include "AGE/Renderer/OrthographicCameraController.h"
 
 #include "AGE/ImGui/ImGuiLayer.h"
 
@@ -29,5 +30,5 @@
 
 
 // --- Entry Point -------------------------
-#include "AGE/EntryPoint.h"
+#include "AGE/Core/EntryPoint.h"
 // -----------------------------------------

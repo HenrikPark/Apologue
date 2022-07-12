@@ -57,17 +57,38 @@
     <ClInclude Include="src\AGE.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Application.h">
-      <Filter>src\AGE</Filter>
+    <ClInclude Include="src\AGE\Core\Application.h">
+      <Filter>src\AGE\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Core.h">
-      <Filter>src\AGE</Filter>
+    <ClInclude Include="src\AGE\Core\Core.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\EntryPoint.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\Input.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\KeyCodes.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\Layer.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\LayerStack.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\Log.h">
+      <Filter>src\AGE\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Core\MouseButtonCodes.h">
+      <Filter>src\AGE\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Core\Timestep.h">
       <Filter>src\AGE\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\EntryPoint.h">
-      <Filter>src\AGE</Filter>
+    <ClInclude Include="src\AGE\Core\Window.h">
+      <Filter>src\AGE\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Events\ApplicationEvent.h">
       <Filter>src\AGE\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h">
       <Filter>src\AGE\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Input.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\KeyCodes.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\Layer.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\LayerStack.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\Log.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\MouseButtonCodes.h">
-      <Filter>src\AGE</Filter>
-    </ClInclude>
     <ClInclude Include="src\AGE\Renderer\Buffer.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\OrthographicCamera.h">
+      <Filter>src\AGE\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Renderer\OrthographicCameraController.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\VertexArray.h">
       <Filter>src\AGE\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\AGE\Window.h">
-      <Filter>src\AGE</Filter>
     </ClInclude>
     <ClInclude Include="src\AGEpch.h">
       <Filter>src</Filter>
@@ -1409,8 +1412,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AGE\Application.cpp">
-      <Filter>src\AGE</Filter>
+    <ClCompile Include="src\AGE\Core\Application.cpp">
+      <Filter>src\AGE\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Core\Layer.cpp">
+      <Filter>src\AGE\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Core\LayerStack.cpp">
+      <Filter>src\AGE\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Core\Log.cpp">
+      <Filter>src\AGE\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\AGE\ImGui\ImGuiBuild.cpp">
       <Filter>src\AGE\ImGui</Filter>
@@ -1418,19 +1430,13 @@
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp">
       <Filter>src\AGE\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\AGE\Layer.cpp">
-      <Filter>src\AGE</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AGE\LayerStack.cpp">
-      <Filter>src\AGE</Filter>
-    </ClCompile>
-    <ClCompile Include="src\AGE\Log.cpp">
-      <Filter>src\AGE</Filter>
-    </ClCompile>
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp">
       <Filter>src\AGE\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\AGE\Renderer\OrthographicCamera.cpp">
+      <Filter>src\AGE\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Renderer\OrthographicCameraController.cpp">
       <Filter>src\AGE\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\AGE\Renderer\RenderCommand.cpp">

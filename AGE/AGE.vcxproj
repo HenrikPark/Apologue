@@ -141,31 +141,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\AGE.h" />
-    <ClInclude Include="src\AGE\Application.h" />
-    <ClInclude Include="src\AGE\Core.h" />
+    <ClInclude Include="src\AGE\Core\Application.h" />
+    <ClInclude Include="src\AGE\Core\Core.h" />
+    <ClInclude Include="src\AGE\Core\EntryPoint.h" />
+    <ClInclude Include="src\AGE\Core\Input.h" />
+    <ClInclude Include="src\AGE\Core\KeyCodes.h" />
+    <ClInclude Include="src\AGE\Core\Layer.h" />
+    <ClInclude Include="src\AGE\Core\LayerStack.h" />
+    <ClInclude Include="src\AGE\Core\Log.h" />
+    <ClInclude Include="src\AGE\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\AGE\Core\Timestep.h" />
-    <ClInclude Include="src\AGE\EntryPoint.h" />
+    <ClInclude Include="src\AGE\Core\Window.h" />
     <ClInclude Include="src\AGE\Events\ApplicationEvent.h" />
     <ClInclude Include="src\AGE\Events\Event.h" />
     <ClInclude Include="src\AGE\Events\KeyEvent.h" />
     <ClInclude Include="src\AGE\Events\MouseEvent.h" />
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\AGE\Input.h" />
-    <ClInclude Include="src\AGE\KeyCodes.h" />
-    <ClInclude Include="src\AGE\Layer.h" />
-    <ClInclude Include="src\AGE\LayerStack.h" />
-    <ClInclude Include="src\AGE\Log.h" />
-    <ClInclude Include="src\AGE\MouseButtonCodes.h" />
     <ClInclude Include="src\AGE\Renderer\Buffer.h" />
     <ClInclude Include="src\AGE\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\AGE\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\AGE\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\AGE\Renderer\RenderCommand.h" />
     <ClInclude Include="src\AGE\Renderer\Renderer.h" />
     <ClInclude Include="src\AGE\Renderer\RendererAPI.h" />
     <ClInclude Include="src\AGE\Renderer\Shader.h" />
     <ClInclude Include="src\AGE\Renderer\Texture.h" />
     <ClInclude Include="src\AGE\Renderer\VertexArray.h" />
-    <ClInclude Include="src\AGE\Window.h" />
     <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLContext.h" />
@@ -593,14 +594,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AGE\Application.cpp" />
+    <ClCompile Include="src\AGE\Core\Application.cpp" />
+    <ClCompile Include="src\AGE\Core\Layer.cpp" />
+    <ClCompile Include="src\AGE\Core\LayerStack.cpp" />
+    <ClCompile Include="src\AGE\Core\Log.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\AGE\Layer.cpp" />
-    <ClCompile Include="src\AGE\LayerStack.cpp" />
-    <ClCompile Include="src\AGE\Log.cpp" />
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp" />
     <ClCompile Include="src\AGE\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\AGE\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\AGE\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\AGE\Renderer\Renderer.cpp" />
     <ClCompile Include="src\AGE\Renderer\RendererAPI.cpp" />

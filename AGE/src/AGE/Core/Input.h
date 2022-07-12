@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AGE/Core.h"
+#include "AGE/Core/Core.h"
 namespace AGE
 {
 	class AGE_API Input
