@@ -7,7 +7,7 @@
 
 namespace AGE
 {
-	VertexArray* VertexArray::Create()
+	Ref<VertexArray> VertexArray::Create()
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -15,7 +15,7 @@ namespace AGE
 				AGE_CORE_ASSERT(false, "RendererAPI::None is currently not supported");
 				return nullptr;			
 			case RendererAPI::API::OpenGL:
-				return new OpenGLVertexArray();
+				return std::make_shared<OpenGLVertexArray>();
 		}
 		AGE_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;

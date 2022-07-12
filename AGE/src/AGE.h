@@ -18,6 +18,7 @@
 
 // --- Renderer-----------------------------
 #include "AGE/Renderer/Renderer.h"
+#include "AGE/Renderer/Renderer2D.h"
 #include "AGE/Renderer/RenderCommand.h"
 
 #include "AGE/Renderer/Buffer.h"
@@ -26,9 +27,4 @@
 #include "AGE/Renderer/VertexArray.h"
 
 #include "AGE/Renderer/OrthographicCamera.h"
-// -----------------------------------------
-
-
-// --- Entry Point -------------------------
-#include "AGE/Core/EntryPoint.h"
 // -----------------------------------------
