@@ -21,5 +21,7 @@ private:
 	AGE::Ref<AGE::VertexArray>  m_SquareVA;
 	AGE::Ref<AGE::Shader> m_FlatColorShader;
 
+	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 };
