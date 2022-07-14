@@ -10,7 +10,7 @@ namespace AGE
 		:m_AspectRatio(aspectRatio),m_Camera(-m_AspectRatio * m_ZoomLevel, m_AspectRatio* m_ZoomLevel,-m_ZoomLevel, m_ZoomLevel), m_Rotation(rotation)
 	{
 	}
-	void OrthographicCameraController::onUpdate(Timestep ts)
+	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
 		//Move Camera
 		float aDeltaTime = ts; //TGA Way to do it

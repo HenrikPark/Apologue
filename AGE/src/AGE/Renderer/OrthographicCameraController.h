@@ -13,7 +13,7 @@ namespace AGE
 	public:
 		OrthographicCameraController(float aspectRatio, bool rotation = false);
 
-		void onUpdate(Timestep ts);
+		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
 
 		OrthographicCamera& GetCamera() { return m_Camera; }

@@ -156,7 +156,7 @@ public:
 	{
 		//Update
 		float deltaTime = ts;
-		m_CameraController.onUpdate(deltaTime);
+		m_CameraController.OnUpdate(deltaTime);
 
 
 
