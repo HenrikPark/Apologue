@@ -13,6 +13,8 @@ namespace AGE
 	}
 	void OpenGLContext::Init()
 	{
+		AGE_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_windowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		AGE_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -25,6 +27,7 @@ namespace AGE
 
 	void OpenGLContext::SwapBuffers()
 	{
+		AGE_PROFILE_FUNCTION();
 		glfwSwapBuffers(m_windowHandle);
 	}
 }

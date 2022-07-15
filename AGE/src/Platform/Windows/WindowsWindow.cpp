@@ -23,16 +23,22 @@ namespace AGE
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		AGE_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -42,6 +48,7 @@ namespace AGE
 
 		if (!s_GLFWInitialized)
 		{
+			AGE_PROFILE_SCOPE("glfwInit");
 			//TODO glfwTerminate on system shutdown
 			int success = glfwInit();
 			AGE_CORE_ASSERT(success, "Could not initialize GLFW!");
@@ -49,7 +56,10 @@ namespace AGE
 			s_GLFWInitialized = true;
 		}
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		{
+			AGE_PROFILE_SCOPE("glfwCreateWindow");
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		}
 
 		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();
@@ -156,11 +166,16 @@ namespace AGE
 
 	void WindowsWindow::Shutdown()
 	{
+		AGE_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
+		
 	}
 
 	void WindowsWindow::OnUpdate()
 	{
+		AGE_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 		
@@ -168,6 +183,8 @@ namespace AGE
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		if (enabled)
 		{
 			glfwSwapInterval(1);

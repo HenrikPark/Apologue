@@ -19,6 +19,8 @@ namespace AGE
 
 	Application::Application()		
 	{
+		AGE_PROFILE_FUNCTION();
+
 		AGE_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -36,18 +38,24 @@ namespace AGE
 	}
 	void Application::PushLayer(Layer* layer)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
 		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));	
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));	
@@ -64,26 +72,37 @@ namespace AGE
 
 	void Application::Run()
 	{
+		AGE_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{	
+			AGE_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime();  //Should be Platform::GetTime()
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (m_Minimized == false)
 			{
-				for (Layer* layer : m_LayerStack)
 				{
-					layer->OnUpdate(timestep);
+					AGE_PROFILE_SCOPE("LayerStack OnUpdate");
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnUpdate(timestep);
+					}
 				}
+
+				m_ImGuiLayer->Begin();
+				{
+					AGE_PROFILE_SCOPE("LayerStack OnImGuiRender");
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnImGuiRender();
+					}
+				}
+				m_ImGuiLayer->End();			
 			}
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-			{
-				layer->OnImGuiRender();
-			}
-			m_ImGuiLayer->End();			
 			m_Window->OnUpdate();
 		}
 	}
@@ -95,6 +114,8 @@ namespace AGE
 	}
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		AGE_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;
