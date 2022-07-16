@@ -29,7 +29,7 @@ public:
 		};
 
 		AGE::Ref<AGE::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(AGE::VertexBuffer::Create(vertices, sizeof(vertices)));
+		vertexBuffer = AGE::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		AGE::BufferLayout layout = {
 			{AGE::ShaderDataType::Float3, "a_Position"},
@@ -41,7 +41,7 @@ public:
 
 		uint32_t indices[3] = { 0,1,2 };
 		AGE::Ref<AGE::IndexBuffer> indexBuffer;
-		indexBuffer.reset(AGE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		indexBuffer = AGE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = AGE::VertexArray::Create();
@@ -53,18 +53,18 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		AGE::Ref<AGE::VertexBuffer> squareVB;
-		squareVB.reset(AGE::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
-		squareVB->SetLayout({
+		AGE::Ref<AGE::VertexBuffer> quadVB;
+		quadVB = AGE::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
+		quadVB->SetLayout({
 			{ AGE::ShaderDataType::Float3, "a_Position" },
 			{ AGE::ShaderDataType::Float2, "a_TexCoord" }
 			});
-		m_SquareVA->AddVertexBuffer(squareVB);
+		m_SquareVA->AddVertexBuffer(quadVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		AGE::Ref<AGE::IndexBuffer> squareIB;
-		squareIB.reset(AGE::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
-		m_SquareVA->SetIndexBuffer(squareIB);
+		AGE::Ref<AGE::IndexBuffer> quadIB;
+		quadIB = AGE::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
+		m_SquareVA->SetIndexBuffer(quadIB);
 
 		std::string vertexSrc = R"(
 			#version 330 core
