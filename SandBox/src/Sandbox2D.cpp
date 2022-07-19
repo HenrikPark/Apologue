@@ -14,6 +14,7 @@ void Sandbox2D::OnAttach()
 {
 	AGE_PROFILE_FUNCTION();
 
+<<<<<<< HEAD
 	//create textures
 	m_CheckerBoardTexture = AGE::Texture2D::Create("assets/textures/Checkerboard.png");
 	m_AGELogoTexture = AGE::Texture2D::Create("assets/textures/AGELogo.png");
@@ -31,6 +32,10 @@ void Sandbox2D::OnAttach()
 	m_Particle.Velocity = { 0.0f, 0.0f };
 	m_Particle.VelocityVariation = { 3.0f, 1.0f };
 	m_Particle.Position = { 0.0f, 0.0f };
+=======
+	m_CheckerBoardTexture = (AGE::Texture2D::Create("assets/textures/Checkerboard.png"));
+	m_AGELogoTexture = (AGE::Texture2D::Create("assets/textures/AGELogo.png"));
+>>>>>>> c0caf945c7da4fcaae501b277363e88a83a88409
 }
 
 void Sandbox2D::OnDetach()
@@ -65,11 +70,19 @@ void Sandbox2D::OnUpdate(AGE::Timestep ts)
 		rotation += deltaTime * 25.0f;
 
 		AGE::Renderer2D::BeginScene(m_CameraController.GetCamera());
+<<<<<<< HEAD
 		AGE::Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f },glm::radians(-45.0f), { 0.8f, 0.2f, 0.3f, 1.0f });
 		AGE::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 		AGE::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
 		AGE::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerBoardTexture, 10.0f);
 		AGE::Renderer2D::DrawRotatedQuad({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f },glm::radians(rotation), m_AGELogoTexture, 1.0f);
+=======
+		AGE::Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, -45.0f, { 0.8f, 0.2f, 0.3f, 1.0f });
+		AGE::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+		AGE::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
+		AGE::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerBoardTexture, 10.0f);
+		AGE::Renderer2D::DrawRotatedQuad({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f }, rotation, m_AGELogoTexture, 1.0f);
+>>>>>>> c0caf945c7da4fcaae501b277363e88a83a88409
 		AGE::Renderer2D::EndScene();
 
 		AGE::Renderer2D::BeginScene(m_CameraController.GetCamera());
