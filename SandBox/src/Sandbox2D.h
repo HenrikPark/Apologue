@@ -2,6 +2,8 @@
 
 #include "AGE.h"
 
+#include "ParticleSystem.h"
+
 class Sandbox2D : public AGE::Layer
 {
 public:
@@ -22,6 +24,14 @@ private:
 	AGE::Ref<AGE::Shader> m_FlatColorShader;
 
 	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;
+	AGE::Ref<AGE::Texture2D> m_SpriteSheet;
+	AGE::Ref<AGE::Texture2D> m_AGELogoTexture;
+	AGE::Ref<AGE::SubTexture2D> m_TextureStairs;
+	AGE::Ref<AGE::SubTexture2D> m_TextureBarrel;
+	AGE::Ref<AGE::SubTexture2D> m_TextureOrangeTree;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+
+	ParticleSystem m_ParticleSystem;
+	ParticleProps m_Particle;
 };

@@ -167,6 +167,7 @@
     <ClInclude Include="src\AGE\Renderer\Renderer2D.h" />
     <ClInclude Include="src\AGE\Renderer\RendererAPI.h" />
     <ClInclude Include="src\AGE\Renderer\Shader.h" />
+    <ClInclude Include="src\AGE\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\AGE\Renderer\Texture.h" />
     <ClInclude Include="src\AGE\Renderer\VertexArray.h" />
     <ClInclude Include="src\AGEpch.h" />
@@ -610,6 +611,7 @@
     <ClCompile Include="src\AGE\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\AGE\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\AGE\Renderer\Shader.cpp" />
+    <ClCompile Include="src\AGE\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\AGE\Renderer\Texture.cpp" />
     <ClCompile Include="src\AGE\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\AGEpch.cpp">
