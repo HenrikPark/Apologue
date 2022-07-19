@@ -14,7 +14,7 @@ void Sandbox2D::OnAttach()
 {
 	AGE_PROFILE_FUNCTION();
 
-<<<<<<< HEAD
+
 	//create textures
 	m_CheckerBoardTexture = AGE::Texture2D::Create("assets/textures/Checkerboard.png");
 	m_AGELogoTexture = AGE::Texture2D::Create("assets/textures/AGELogo.png");
@@ -32,10 +32,10 @@ void Sandbox2D::OnAttach()
 	m_Particle.Velocity = { 0.0f, 0.0f };
 	m_Particle.VelocityVariation = { 3.0f, 1.0f };
 	m_Particle.Position = { 0.0f, 0.0f };
-=======
+
 	m_CheckerBoardTexture = (AGE::Texture2D::Create("assets/textures/Checkerboard.png"));
 	m_AGELogoTexture = (AGE::Texture2D::Create("assets/textures/AGELogo.png"));
->>>>>>> c0caf945c7da4fcaae501b277363e88a83a88409
+
 }
 
 void Sandbox2D::OnDetach()

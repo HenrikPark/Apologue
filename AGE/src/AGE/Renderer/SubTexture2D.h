@@ -19,5 +19,6 @@ namespace AGE
 		Ref<Texture2D> m_Texture;
 		
 		glm::vec2 m_TexCoords[4];
+
 	};
 }

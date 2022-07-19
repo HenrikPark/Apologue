@@ -24,15 +24,11 @@ private:
 	AGE::Ref<AGE::Shader> m_FlatColorShader;
 
 	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;
-<<<<<<< HEAD
 	AGE::Ref<AGE::Texture2D> m_SpriteSheet;
 	AGE::Ref<AGE::Texture2D> m_AGELogoTexture;
 	AGE::Ref<AGE::SubTexture2D> m_TextureStairs;
 	AGE::Ref<AGE::SubTexture2D> m_TextureBarrel;
 	AGE::Ref<AGE::SubTexture2D> m_TextureOrangeTree;
-=======
-	AGE::Ref<AGE::Texture2D> m_AGELogoTexture;
->>>>>>> c0caf945c7da4fcaae501b277363e88a83a88409
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
