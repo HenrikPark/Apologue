@@ -142,7 +142,7 @@
   <ItemGroup>
     <ClInclude Include="src\AGE.h" />
     <ClInclude Include="src\AGE\Core\Application.h" />
-    <ClInclude Include="src\AGE\Core\Core.h" />
+    <ClInclude Include="src\AGE\Core\Base.h" />
     <ClInclude Include="src\AGE\Core\EntryPoint.h" />
     <ClInclude Include="src\AGE\Core\Input.h" />
     <ClInclude Include="src\AGE\Core\KeyCodes.h" />

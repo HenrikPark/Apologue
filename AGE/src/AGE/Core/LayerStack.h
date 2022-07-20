@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AGE/Core/Core.h"
+#include "AGE/Core/Base.h"
 #include "Layer.h"
 
 #include <vector>

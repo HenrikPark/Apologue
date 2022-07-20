@@ -1,7 +1,7 @@
 #pragma once
 
 #include <functional>
-#include "AGE/Core/Core.h"
+#include "AGE/Core/Base.h"
 
 
 namespace AGE

@@ -52,6 +52,11 @@ namespace AGE
 		overlay->OnAttach();
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		AGE_PROFILE_FUNCTION();

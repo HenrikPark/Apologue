@@ -60,7 +60,7 @@
     <ClInclude Include="src\AGE\Core\Application.h">
       <Filter>src\AGE\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Core\Core.h">
+    <ClInclude Include="src\AGE\Core\Base.h">
       <Filter>src\AGE\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Core\EntryPoint.h">

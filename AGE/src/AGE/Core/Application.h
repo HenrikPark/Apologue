@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "Base.h"
 
 #include "Window.h"
 #include "AGE/Core/LayerStack.h"
@@ -28,6 +28,8 @@ namespace AGE
 		void PushOverlay(Layer* overlay);
 
 		inline Window& GetWindow() { return *m_Window; }
+
+		void Close();
 
 		inline static Application& Get() { return *s_Instance; }
 
