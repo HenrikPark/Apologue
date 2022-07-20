@@ -5,3 +5,6 @@ bin-int/
 
 # Files
 *.user
+SandBox/AGEProfile-Runtime.json
+SandBox/AGEProfile-Shutdown.json
+SandBox/AGEProfile-Startup.json
