@@ -22,19 +22,15 @@ private:
 	//Temp 
 	AGE::Ref<AGE::VertexArray>  m_SquareVA;
 	AGE::Ref<AGE::Shader> m_FlatColorShader;
+	AGE::Ref<AGE::Framebuffer> m_Framebuffer;
 
-	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;
-	AGE::Ref<AGE::Texture2D> m_SpriteSheet;
+	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;	
 	AGE::Ref<AGE::Texture2D> m_AGELogoTexture;
-	AGE::Ref<AGE::SubTexture2D> m_TextureStairs;
-	AGE::Ref<AGE::SubTexture2D> m_TextureBarrel;
-	AGE::Ref<AGE::SubTexture2D> m_TextureOrangeTree;
+	
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
 	ParticleSystem m_ParticleSystem;
 	ParticleProps m_Particle;
 
-	uint32_t m_MapWidth, m_MapHeight;
-	std::unordered_map<char, AGE::Ref<AGE::SubTexture2D>> s_TextureMap;
 };

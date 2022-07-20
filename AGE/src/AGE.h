@@ -24,6 +24,7 @@
 #include "AGE/Renderer/Buffer.h"
 #include "AGE/Renderer/Shader.h"
 #include "AGE/Renderer/Texture.h"
+#include "AGE/Renderer/Framebuffer.h"
 #include "AGE/Renderer/SubTexture2D.h"
 #include "AGE/Renderer/VertexArray.h"
 

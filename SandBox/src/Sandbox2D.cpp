@@ -18,6 +18,12 @@ void Sandbox2D::OnAttach()
 	//create textures
 	m_CheckerBoardTexture = AGE::Texture2D::Create("assets/textures/Checkerboard.png");
 	m_AGELogoTexture = AGE::Texture2D::Create("assets/textures/AGELogo.png");
+
+
+	AGE::FramebufferSpecification fbSpec;
+	fbSpec.Width = 1280;
+	fbSpec.Height = 720;
+	m_Framebuffer = AGE::Framebuffer::Create(fbSpec);
 	
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
 	m_Particle.ColorEnd = { 254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f };
@@ -26,8 +32,7 @@ void Sandbox2D::OnAttach()
 	m_Particle.Velocity = { 0.0f, 0.0f };
 	m_Particle.VelocityVariation = { 3.0f, 1.0f };
 	m_Particle.Position = { 0.0f, 0.0f };
-
-	//m_CameraController.SetZoomLevel(2.0f);
+	
 }
 
 void Sandbox2D::OnDetach()
@@ -49,11 +54,10 @@ void Sandbox2D::OnUpdate(AGE::Timestep ts)
 	//Render
 	{
 		AGE_PROFILE_SCOPE("Renderer Prep");
+		m_Framebuffer->Bind();
 		AGE::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		AGE::RenderCommand::Clear();
 	}
-
-
 
 	{
 		AGE_PROFILE_SCOPE("Renderer Draw");
@@ -82,6 +86,7 @@ void Sandbox2D::OnUpdate(AGE::Timestep ts)
 
 		}
 		AGE::Renderer2D::EndScene();
+		m_Framebuffer->Unbind();
 	}
 
 
@@ -113,7 +118,7 @@ void Sandbox2D::OnImGuiRender()
 {
 	AGE_PROFILE_FUNCTION();
 	// Note: Switch this to true to enable dockspace
-	static bool dockingEnabled = false;
+	static bool dockingEnabled = true;
 	if (dockingEnabled)
 	{
 		static bool dockspaceOpen = true;
@@ -184,11 +189,12 @@ void Sandbox2D::OnImGuiRender()
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 		ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 
-		uint32_t textureID = m_CheckerBoardTexture->GetRendererID();
-		ImGui::Image((void*)textureID, ImVec2{ 256.0f, 256.0f });
-		ImGui::End();
+		uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
+		ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
 
 		ImGui::End();
+
+		ImGui::End();		
 	}
 	else
 	{
@@ -204,7 +210,7 @@ void Sandbox2D::OnImGuiRender()
 		ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 
 		uint32_t textureID = m_CheckerBoardTexture->GetRendererID();
-		ImGui::Image((void*)textureID, ImVec2{ 256.0f, 256.0f });
+		ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
 		ImGui::End();
 	}
 }

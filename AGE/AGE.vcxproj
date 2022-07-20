@@ -159,6 +159,7 @@
     <ClInclude Include="src\AGE\Events\MouseEvent.h" />
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\AGE\Renderer\Buffer.h" />
+    <ClInclude Include="src\AGE\Renderer\Framebuffer.h" />
     <ClInclude Include="src\AGE\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\AGE\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\AGE\Renderer\OrthographicCameraController.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGLFramebuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLTexture.h" />
@@ -604,6 +606,7 @@
     <ClCompile Include="src\AGE\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\AGE\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\AGE\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\AGE\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\AGE\Renderer\RenderCommand.cpp" />
@@ -623,6 +626,7 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLTexture.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGLFramebuffer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
