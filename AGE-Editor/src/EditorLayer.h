@@ -26,6 +26,7 @@ namespace AGE
 
 		Ref<Texture2D> m_CheckerBoardTexture;		
 
+		glm::vec2 m_ViewportSize;
 
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 

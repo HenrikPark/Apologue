@@ -83,9 +83,7 @@ namespace AGE
 	{
 		AGE_PROFILE_FUNCTION();
 		// Note: Switch this to true to enable dockspace
-		static bool dockingEnabled = true;
-		if (dockingEnabled)
-		{
+
 			static bool dockspaceOpen = true;
 			static bool opt_fullscreen_persistant = true;
 			bool opt_fullscreen = opt_fullscreen_persistant;
@@ -154,30 +152,24 @@ namespace AGE
 			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 
+			ImGui::End();
+
+			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0,0 });
+			ImGui::Begin("Viewport");
+			ImVec2 viewportPanelsize = ImGui::GetContentRegionAvail();
+			if (m_ViewportSize != *((glm::vec2*)&viewportPanelsize))
+			{
+				m_Framebuffer->Resize((uint32_t)viewportPanelsize.x, (uint32_t)viewportPanelsize.y);
+				m_ViewportSize = { viewportPanelsize.x, viewportPanelsize.y };
+
+				m_CameraController.OnResize(viewportPanelsize.x, viewportPanelsize.y);
+			}
 			uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
+			ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x,  m_ViewportSize.y }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
+			ImGui::End();
+			ImGui::PopStyleVar();
 
 			ImGui::End();
-
-			ImGui::End();
-		}
-		else
-		{
-			ImGui::Begin("Settings");
-
-			auto stats = AGE::Renderer2D::GetStats();
-			ImGui::Text("Renderer2D Stats:");
-			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
-			ImGui::Text("Quads: %d", stats.QuadCount);
-			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
-			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-
-			uint32_t textureID = m_CheckerBoardTexture->GetRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0,1 }, ImVec2{ 1,0 });
-			ImGui::End();
-		}
 	}
 
 	void EditorLayer::OnEvent(AGE::Event& e)

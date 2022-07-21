@@ -1,7 +1,7 @@
 workspace "AGE"
 
 	architecture "x64"
-	startproject "Sandbox"
+	startproject "Age-Editor"
 	configurations
 	{	
 		"Debug",
