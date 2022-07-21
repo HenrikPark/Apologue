@@ -21,8 +21,7 @@ private:
 
 	//Temp 
 	AGE::Ref<AGE::VertexArray>  m_SquareVA;
-	AGE::Ref<AGE::Shader> m_FlatColorShader;
-	AGE::Ref<AGE::Framebuffer> m_Framebuffer;
+	AGE::Ref<AGE::Shader> m_FlatColorShader;	
 
 	AGE::Ref<AGE::Texture2D> m_CheckerBoardTexture;	
 	AGE::Ref<AGE::Texture2D> m_AGELogoTexture;

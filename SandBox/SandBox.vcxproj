@@ -131,6 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ParticleSystem.h" />
+    <ClInclude Include="src\Sandbox2D.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\ParticleSystem.cpp" />
     <ClCompile Include="src\Sandbox2D.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
@@ -139,10 +143,6 @@
     <ProjectReference Include="..\AGE\AGE.vcxproj">
       <Project>{D2D0870B-3EDA-877C-C755-9E7C335E937C}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\ParticleSystem.h" />
-    <ClInclude Include="src\Sandbox2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

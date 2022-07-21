@@ -146,3 +146,56 @@ project "Sandbox"
 		defines "AGE_DIST"
 		runtime "Release"
 		optimize "on"
+
+
+project "AGE-Editor"
+	location "AGE-Editor"
+	kind "consoleApp"
+	language "C++"
+	cppdialect "c++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"AGE/vendor/spdlog/include",
+		"AGE/src",
+		"AGE/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"AGE"
+	}
+
+	filter "system:windows"				
+		systemversion "latest"
+
+		defines
+		{
+			"AGE_PLATFORM_WINDOWS"			
+		}
+
+	filter "configurations:Debug"
+		defines "AGE_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "AGE_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "AGE_DIST"
+		runtime "Release"
+		optimize "on"

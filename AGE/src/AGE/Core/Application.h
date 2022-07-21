@@ -17,10 +17,9 @@ namespace AGE
 	class Application
 	{
 	public:
-		Application();
-		virtual ~Application();	
+		Application(const std::string& name = "AGE App");
+		virtual ~Application();
 
-		void Run();
 
 		void OnEvent(Event& e);
 
@@ -33,6 +32,7 @@ namespace AGE
 
 		inline static Application& Get() { return *s_Instance; }
 
+		void Run();
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
