@@ -3,6 +3,8 @@
 
 #include "AGE/Core/Input.h"
 #include "AGE/Core/KeyCodes.h"
+#include "AGE/Core/MouseButtonCodes.h"
+
 
 namespace AGE
 {

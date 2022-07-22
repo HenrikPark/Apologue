@@ -19,10 +19,6 @@ namespace AGE
 	{
 	}
 
-	ImGuiLayer::~ImGuiLayer()
-	{
-	}
-
 	void ImGuiLayer::OnAttach()
 	{
 		AGE_PROFILE_FUNCTION();
@@ -70,6 +66,16 @@ namespace AGE
 		ImGui::DestroyContext();
 	}
 
+	void ImGuiLayer::OnEvent(Event& e)
+	{
+		if (m_BlockEvents)
+		{			
+			ImGuiIO& io = ImGui::GetIO();
+			e.m_Handled |= e.IsInCategory(EventCategoryMouse) & io.WantCaptureMouse;
+			e.m_Handled |= e.IsInCategory(EventCategoryKeyboard) & io.WantCaptureKeyboard;
+		}
+	}
+
 	void ImGuiLayer::Begin()
 	{
 		AGE_PROFILE_FUNCTION();
@@ -100,9 +106,4 @@ namespace AGE
 		}
 	}
 
-	//void ImGuiLayer::OnImGuiRender()
-	//{
-	//	static bool show = true;
-	//	ImGui::ShowDemoWindow(&show);
-	//}	
 }

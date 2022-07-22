@@ -39,7 +39,10 @@ namespace AGE
 		AGE_PROFILE_FUNCTION();
 
 		//Update
-		m_CameraController.OnUpdate(deltaTime);
+		if (m_ViewportFocused)
+		{
+			m_CameraController.OnUpdate(deltaTime);
+		}
 
 		AGE::Renderer2D::ResetStats();
 		//Render
@@ -156,8 +159,13 @@ namespace AGE
 
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0,0 });
 			ImGui::Begin("Viewport");
+
+			m_ViewportFocused = ImGui::IsWindowFocused();
+			m_ViewportHovered = ImGui::IsWindowHovered();
+			Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
+
 			ImVec2 viewportPanelsize = ImGui::GetContentRegionAvail();
-			if (m_ViewportSize != *((glm::vec2*)&viewportPanelsize))
+			if (m_ViewportSize != *((glm::vec2*)&viewportPanelsize) && viewportPanelsize.x > 0 && viewportPanelsize.y > 0)
 			{
 				m_Framebuffer->Resize((uint32_t)viewportPanelsize.x, (uint32_t)viewportPanelsize.y);
 				m_ViewportSize = { viewportPanelsize.x, viewportPanelsize.y };
