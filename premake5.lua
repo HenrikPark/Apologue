@@ -18,6 +18,7 @@ IncludeDir["Glad"] = "AGE/vendor/Glad/include"
 IncludeDir["ImGui"] = "AGE/vendor/imgui"
 IncludeDir["glm"] = "AGE/vendor/glm"
 IncludeDir["stb_image"] = "AGE/vendor/stb_image"
+IncludeDir["entt"] = "AGE/vendor/entt/include"
 
 
 include "AGE/vendor/GLFW"
@@ -59,7 +60,8 @@ project "AGE"
 		"%{IncludeDir.Glad}",		
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -116,7 +118,8 @@ project "Sandbox"
 		"AGE/vendor/spdlog/include",
 		"AGE/src",
 		"AGE/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -169,7 +172,8 @@ project "AGE-Editor"
 		"AGE/vendor/spdlog/include",
 		"AGE/src",
 		"AGE/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
