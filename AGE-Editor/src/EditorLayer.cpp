@@ -8,7 +8,7 @@ namespace AGE
 {
 
 	EditorLayer::EditorLayer()
-		:Layer("EditorLayer"), m_CameraController(1280.0f / 720.0f, true), m_SquareColor({ 0.8f, 0.2f, 0.3f, 1.0f })
+		:Layer("EditorLayer"), m_CameraController(1280.0f / 720.0f, true), m_SquareColor({ 0.2f, 0.8f, 0.3f, 1.0f })
 	{
 	}
 
@@ -16,15 +16,21 @@ namespace AGE
 	{
 		AGE_PROFILE_FUNCTION();
 
-
 		//create textures
 		m_CheckerBoardTexture = AGE::Texture2D::Create("assets/textures/Checkerboard.png");
 
-		AGE::FramebufferSpecification fbSpec;
+		FramebufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		m_Framebuffer = AGE::Framebuffer::Create(fbSpec);	
+		m_Framebuffer = Framebuffer::Create(fbSpec);	
 
+		m_ActiveScene = CreateRef<Scene>();
+		
+		//entity
+		auto square = m_ActiveScene->CreateEntity("Square");		
+		square.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.2f, 0.8f, 0.3f, 1.0f });
+
+		m_SquareEntity = square;
 	}
 
 	void EditorLayer::OnDetach()
@@ -44,42 +50,22 @@ namespace AGE
 			m_CameraController.OnUpdate(deltaTime);
 		}
 
-		AGE::Renderer2D::ResetStats();
 		//Render
-		{
-			AGE_PROFILE_SCOPE("Renderer Prep");
-			m_Framebuffer->Bind();
-			AGE::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-			AGE::RenderCommand::Clear();
-		}
+		Renderer2D::ResetStats();
+		m_Framebuffer->Bind();
+		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		RenderCommand::Clear();
+		
 
-		{
-			AGE_PROFILE_SCOPE("Renderer Draw");
+		Renderer2D::BeginScene(m_CameraController.GetCamera());
 
-			static float rotation = 0.0f;
-			rotation += deltaTime * 25.0f;
-
-			AGE::Renderer2D::BeginScene(m_CameraController.GetCamera());
-
-			AGE::Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, -45.0f, { 0.8f, 0.2f, 0.3f, 1.0f });
-			AGE::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-			AGE::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-			AGE::Renderer2D::DrawRotatedQuad({ 0.0f, 0.0f, 0.1f }, { 1.0f, 1.0f }, rotation, m_CheckerBoardTexture, 10.0f);
-			AGE::Renderer2D::EndScene();
-
-			AGE::Renderer2D::BeginScene(m_CameraController.GetCamera());
-			for (float y = -5.0f; y < 5.0f; y += 0.5f)
-			{
-				for (float x = -5.0f; x < 5.0f; x += 0.5f)
-				{
-					glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 5.0f) / 10.0f , 0.75 };
-					AGE::Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
-				}
-
-			}
-			AGE::Renderer2D::EndScene();
-			m_Framebuffer->Unbind();
-		}		
+		//Update Scene
+		m_ActiveScene->OnUpdate(deltaTime);
+		
+		Renderer2D::EndScene();
+	
+		m_Framebuffer->Unbind();
+				
 	}
 
 	void EditorLayer::OnImGuiRender()
@@ -153,7 +139,15 @@ namespace AGE
 			ImGui::Text("Quads: %d", stats.QuadCount);
 			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+
+			if (m_SquareEntity)
+			{
+				ImGui::Separator();
+				ImGui::Text("%s", m_SquareEntity.GetComponent<TagComponent>().Tag.c_str());
+				auto& squareColor = m_SquareEntity.GetComponent<SpriteRendererComponent>().Color;
+				ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
+				ImGui::Separator();
+			}
 
 			ImGui::End();
 

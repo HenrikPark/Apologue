@@ -16,6 +16,10 @@
 
 #include "AGE/ImGui/ImGuiLayer.h"
 
+#include "AGE/Scene/Scene.h"
+#include "AGE/Scene/Entity.h"
+#include "AGE/Scene/Components.h"
+
 // --- Renderer-----------------------------
 #include "AGE/Renderer/Renderer.h"
 #include "AGE/Renderer/Renderer2D.h"
