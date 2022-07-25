@@ -159,6 +159,7 @@
     <ClInclude Include="src\AGE\Events\MouseEvent.h" />
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\AGE\Renderer\Buffer.h" />
+    <ClInclude Include="src\AGE\Renderer\Camera.h" />
     <ClInclude Include="src\AGE\Renderer\Framebuffer.h" />
     <ClInclude Include="src\AGE\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\AGE\Renderer\OrthographicCamera.h" />

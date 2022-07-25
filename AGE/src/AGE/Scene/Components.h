@@ -1,4 +1,5 @@
 #pragma once
+#include "AGE/Renderer/Camera.h"
 
 #include <glm/glm.hpp>
 namespace AGE
@@ -41,4 +42,18 @@ namespace AGE
 		}
 
 	};
+
+	struct CameraComponent
+	{
+		AGE::Camera Camera;
+		bool Primary = true; // TODO: think about moving to Scene
+
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
+		CameraComponent(const glm::mat4 & projection)
+			: Camera(projection)
+		{
+		}
+	};
+
 }

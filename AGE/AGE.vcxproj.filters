@@ -1428,6 +1428,7 @@
     <ClInclude Include="src\AGE\Scene\Scene.h" />
     <ClInclude Include="src\AGE\Scene\Components.h" />
     <ClInclude Include="src\AGE\Scene\Entity.h" />
+    <ClInclude Include="src\AGE\Renderer\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AGE\Core\Application.cpp">
