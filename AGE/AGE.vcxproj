@@ -172,12 +172,12 @@
     <ClInclude Include="src\AGE\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\AGE\Renderer\Texture.h" />
     <ClInclude Include="src\AGE\Renderer\VertexArray.h" />
-    <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\AGE\Scene\Components.h" />
     <ClInclude Include="src\AGE\Scene\Entity.h" />
     <ClInclude Include="src\AGE\Scene\Scene.h" />
     <ClInclude Include="src\AGE\Scene\SceneCamera.h" />
     <ClInclude Include="src\AGE\Scene\ScriptableEntity.h" />
+    <ClInclude Include="src\AGEpch.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLFramebuffer.h" />
@@ -622,12 +622,12 @@
     <ClCompile Include="src\AGE\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\AGE\Renderer\Texture.cpp" />
     <ClCompile Include="src\AGE\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\AGEpch.cpp">
-      <PrecompiledHeader>Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\AGE\Scene\Entity.cpp" />
     <ClCompile Include="src\AGE\Scene\Scene.cpp" />
     <ClCompile Include="src\AGE\Scene\SceneCamera.cpp" />
+    <ClCompile Include="src\AGEpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGl\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLFramebuffer.cpp" />

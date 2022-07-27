@@ -22,6 +22,9 @@
     <Filter Include="src\AGE\Renderer">
       <UniqueIdentifier>{2FC7A863-1BC0-C7B5-44F2-AC3A304AA7C1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AGE\Scene">
+      <UniqueIdentifier>{4675DC7E-B235-58B5-7B70-A132E7EF9C91}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -114,6 +117,9 @@
     <ClInclude Include="src\AGE\Renderer\Buffer.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\Renderer\Camera.h">
+      <Filter>src\AGE\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Renderer\Framebuffer.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
@@ -149,6 +155,21 @@
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\VertexArray.h">
       <Filter>src\AGE\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scene\Components.h">
+      <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scene\Entity.h">
+      <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scene\Scene.h">
+      <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scene\SceneCamera.h">
+      <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scene\ScriptableEntity.h">
+      <Filter>src\AGE\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\AGEpch.h">
       <Filter>src</Filter>
@@ -1425,12 +1446,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Scene\Scene.h" />
-    <ClInclude Include="src\AGE\Scene\Components.h" />
-    <ClInclude Include="src\AGE\Scene\Entity.h" />
-    <ClInclude Include="src\AGE\Renderer\Camera.h" />
-    <ClInclude Include="src\AGE\Scene\SceneCamera.h" />
-    <ClInclude Include="src\AGE\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AGE\Core\Application.cpp">
@@ -1487,6 +1502,15 @@
     <ClCompile Include="src\AGE\Renderer\VertexArray.cpp">
       <Filter>src\AGE\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\AGE\Scene\Entity.cpp">
+      <Filter>src\AGE\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Scene\Scene.cpp">
+      <Filter>src\AGE\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Scene\SceneCamera.cpp">
+      <Filter>src\AGE\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\AGEpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -1520,8 +1544,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\AGE\Scene\Scene.cpp" />
-    <ClCompile Include="src\AGE\Scene\Entity.cpp" />
-    <ClCompile Include="src\AGE\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
