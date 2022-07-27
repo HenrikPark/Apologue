@@ -1430,6 +1430,7 @@
     <ClInclude Include="src\AGE\Scene\Entity.h" />
     <ClInclude Include="src\AGE\Renderer\Camera.h" />
     <ClInclude Include="src\AGE\Scene\SceneCamera.h" />
+    <ClInclude Include="src\AGE\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AGE\Core\Application.cpp">

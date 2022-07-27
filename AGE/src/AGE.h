@@ -18,6 +18,7 @@
 
 #include "AGE/Scene/Scene.h"
 #include "AGE/Scene/Entity.h"
+#include "AGE/Scene/ScriptableEntity.h"
 #include "AGE/Scene/Components.h"
 
 // --- Renderer-----------------------------

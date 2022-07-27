@@ -38,6 +38,45 @@ namespace AGE
 		m_SecondCamera = m_ActiveScene->CreateEntity("Clip-Space Entity");
 		auto& cc = m_SecondCamera.AddComponent<CameraComponent>();
 		cc.Primary = false;
+
+		class CameraController : public ScriptableEntity
+		{
+		public:
+			void OnCreate()
+			{
+				
+				
+			}
+			
+			void OnDestroy()
+			{
+
+			}
+
+			void OnUpdate(Timestep deltaTime)
+			{
+				auto& transform = GetComponent<TransformComponent>().Transform;
+				float speed = 5.0f;
+				
+				if (Input::IsKeyPressed(AGE_KEY_A))
+				{
+					transform[3][0] -= speed * deltaTime;
+				}
+				if (Input::IsKeyPressed(AGE_KEY_D))
+				{
+					transform[3][0] += speed * deltaTime;
+				}
+				if (Input::IsKeyPressed(AGE_KEY_W))
+				{
+					transform[3][1] += speed * deltaTime;
+				}
+				if (Input::IsKeyPressed(AGE_KEY_S))
+				{
+					transform[3][1] -= speed * deltaTime;
+				}
+			}
+		};		
+		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 	}
 
 	void EditorLayer::OnDetach()
