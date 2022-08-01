@@ -179,6 +179,7 @@
     <ClInclude Include="src\AGE\Scene\SceneSerializer.h" />
     <ClInclude Include="src\AGE\Scene\ScriptableEntity.h" />
     <ClInclude Include="src\AGEpch.h" />
+    <ClInclude Include="src\AGE\Utils\PlatformUtils.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLFramebuffer.h" />
@@ -638,6 +639,7 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGLTexture.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>

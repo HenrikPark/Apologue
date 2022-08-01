@@ -17,6 +17,7 @@ namespace AGE
 
 	void SceneHierarchyPanel::SetContext(const Ref<Scene>& context)
 	{
+		m_SelectionContext = {};
 		m_Context = context;
 	}
 
