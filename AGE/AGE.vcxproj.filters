@@ -168,6 +168,9 @@
     <ClInclude Include="src\AGE\Scene\SceneCamera.h">
       <Filter>src\AGE\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\Scene\SceneSerializer.h">
+      <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Scene\ScriptableEntity.h">
       <Filter>src\AGE\Scene</Filter>
     </ClInclude>
@@ -1509,6 +1512,9 @@
       <Filter>src\AGE\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\AGE\Scene\SceneCamera.cpp">
+      <Filter>src\AGE\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Scene\SceneSerializer.cpp">
       <Filter>src\AGE\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\AGEpch.cpp">

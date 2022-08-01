@@ -10,3 +10,6 @@
 [submodule "AGE/vendor/glm"]
 	path = AGE/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "AGE/vendor/yaml-cpp"]
+	path = AGE/vendor/yaml-cpp
+	url = https://github.com/thecherno/yaml-cpp

@@ -19,11 +19,13 @@ IncludeDir["ImGui"] = "AGE/vendor/imgui"
 IncludeDir["glm"] = "AGE/vendor/glm"
 IncludeDir["stb_image"] = "AGE/vendor/stb_image"
 IncludeDir["entt"] = "AGE/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "AGE/vendor/yaml-cpp/include"
 
 
 include "AGE/vendor/GLFW"
 include "AGE/vendor/Glad"
 include "AGE/vendor/imgui"
+include "AGE/vendor/yaml-cpp"
 
 project "AGE"
 	location "AGE"
@@ -61,7 +63,8 @@ project "AGE"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 	}
 
 	links
@@ -69,6 +72,7 @@ project "AGE"
 		"GLFW",
 		"Glad",
 		"ImGui",
+		"yaml-cpp",
 		"opengl32.lib"
 	}
 
