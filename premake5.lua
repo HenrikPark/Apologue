@@ -20,6 +20,7 @@ IncludeDir["glm"] = "AGE/vendor/glm"
 IncludeDir["stb_image"] = "AGE/vendor/stb_image"
 IncludeDir["entt"] = "AGE/vendor/entt/include"
 IncludeDir["yaml_cpp"] = "AGE/vendor/yaml-cpp/include"
+IncludeDir["ImGuizmo"] = "AGE/vendor/ImGuizmo"
 
 
 include "AGE/vendor/GLFW"
@@ -48,6 +49,8 @@ project "AGE"
 		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.h",
+		"%{prj.name}/vendor/ImGuizmo/ImGuizmo.cpp"
 	}
 	defines
 	{
@@ -64,7 +67,8 @@ project "AGE"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.yaml_cpp}"
+		"%{IncludeDir.yaml_cpp}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links
@@ -75,6 +79,9 @@ project "AGE"
 		"yaml-cpp",
 		"opengl32.lib"
 	}
+
+	filter "files:AGE/vendor/ImGuizmo/**.cpp"
+	flags { "NoPCH"}
 
 	filter "system:windows"				
 		systemversion "latest"

@@ -13,3 +13,6 @@
 [submodule "AGE/vendor/yaml-cpp"]
 	path = AGE/vendor/yaml-cpp
 	url = https://github.com/thecherno/yaml-cpp
+[submodule "AGE/vendor/ImGuizmo"]
+	path = AGE/vendor/ImGuizmo
+	url = https://github.com/thecherno/imguizmo
