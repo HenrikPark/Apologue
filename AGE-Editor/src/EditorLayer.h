@@ -3,6 +3,8 @@
 #include "AGE.h"
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "AGE/Renderer/EditorCamera.h"
+
 namespace AGE
 {
 	class EditorLayer : public Layer
@@ -39,6 +41,8 @@ namespace AGE
 		Entity m_SecondCamera;
 
 		bool m_PrimaryCamera = true;
+
+		EditorCamera m_EditorCamera;
 
 		Ref<Texture2D> m_CheckerBoardTexture;		
 

@@ -31,7 +31,7 @@ namespace AGE
 	}
 
 
-	void Scene::OnUpdate(Timestep DeltaTime)
+	void Scene::OnUpdateRuntime(Timestep deltaTime)
 	{
 		//Update Scripts
 		{
@@ -46,7 +46,7 @@ namespace AGE
 						nsc.Instance->OnCreate();
 					}
 
-					nsc.Instance->OnUpdate(DeltaTime);					
+					nsc.Instance->OnUpdate(deltaTime);					
 			});
 		}
 
@@ -83,6 +83,21 @@ namespace AGE
 
 			Renderer2D::EndScene();
 		}
+	}
+
+	void Scene::OnUpdateEditor(Timestep deltaTime, EditorCamera& camera)
+	{
+		Renderer2D::BeginScene(camera);
+
+		auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+		for (auto entity : group)
+		{
+			auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+
+			Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color);
+		}
+
+		Renderer2D::EndScene();
 	}
 
 	void Scene::OnViewportResize(uint32_t width, uint32_t height)

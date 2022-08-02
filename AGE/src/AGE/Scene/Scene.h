@@ -1,7 +1,9 @@
 #pragma once
 
-#include "entt.hpp"
 #include "AGE/Core/Timestep.h"
+#include "AGE/Renderer/EditorCamera.h"
+
+#include "entt.hpp"
 
 namespace AGE
 {
@@ -15,8 +17,9 @@ namespace AGE
 
 		Entity CreateEntity(const std::string& name = std::string());
 		void DestroyEntity(Entity entity);
-
-		void OnUpdate(Timestep DeltaTime);
+		
+		void OnUpdateRuntime(Timestep deltaTime);
+		void OnUpdateEditor(Timestep deltaTime, EditorCamera& camera);
 		void OnViewportResize(uint32_t width, uint32_t height);
 
 		Entity GetPrimaryCameraEntity();
