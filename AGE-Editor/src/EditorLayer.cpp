@@ -148,7 +148,7 @@ namespace AGE
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
 			int pixelData = m_Framebuffer->ReadPixel(1, mouseX, mouseY);
-			AGE_CORE_WARN("Pixel data = {0}", pixelData);
+			m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
 		}
 
 		m_Framebuffer->Unbind();
@@ -235,6 +235,12 @@ namespace AGE
 
 		ImGui::Begin("Stats");
 
+		std::string name = "None";
+		if (m_HoveredEntity)
+			name = m_HoveredEntity.GetComponent<TagComponent>().Tag;
+		ImGui::Text("Hovered Entity: %s", name.c_str());
+
+
 		auto stats = Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
 		ImGui::Text("Draw Calls: %d", stats.DrawCalls);
@@ -263,7 +269,7 @@ namespace AGE
 		minBound.x += viewportOffset.x;
 		minBound.y += viewportOffset.y;
 
-		ImVec2 maxBound = { minBound.x + windowSize.x, minBound.y + windowSize.y };
+		ImVec2 maxBound = { minBound.x + m_ViewportSize.x, minBound.y + m_ViewportSize.y };
 		m_ViewportBounds[0] = { minBound.x, minBound.y };
 		m_ViewportBounds[1] = { maxBound.x, maxBound.y };
 
