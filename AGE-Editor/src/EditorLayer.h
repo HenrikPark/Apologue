@@ -2,6 +2,7 @@
 
 #include "AGE.h"
 #include "Panels/SceneHierarchyPanel.h"
+#include "Panels/ContentBrowserPanel.h"
 
 #include "AGE/Renderer/EditorCamera.h"
 
@@ -60,6 +61,7 @@ namespace AGE
 
 		//Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;
+		ContentBrowserPanel m_ContentBrowserPanel;
 
 	};
 }
