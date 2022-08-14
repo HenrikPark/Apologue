@@ -1,9 +1,18 @@
-# Directories
-.vs/
-bin/
+# Binaries
+**/bin/
 bin-int/
 
-# Files
-*.user
-*.json
+# AGE files
+*.log
 
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# Directories
+AGE/vendor/VulkanSDK
+AGE-Editor/assets/cache
+scripts/__pycache__

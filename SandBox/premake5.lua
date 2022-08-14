@@ -2,7 +2,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -34,6 +34,11 @@ project "Sandbox"
 		defines "AGE_DEBUG"
 		runtime "Debug"
 		symbols "on"
+		
+		defines
+		{
+			"AGE_PLATFORM_WINDOWS"			
+		}
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"

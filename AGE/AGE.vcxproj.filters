@@ -19,6 +19,9 @@
     <Filter Include="src\AGE\ImGui">
       <UniqueIdentifier>{537D2C7E-BF3D-A8B4-8878-F131F4F7EC90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AGE\Math">
+      <UniqueIdentifier>{E28BBDA6-CEEE-4C4B-7774-850163B618CE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\AGE\Renderer">
       <UniqueIdentifier>{2FC7A863-1BC0-C7B5-44F2-AC3A304AA7C1}</UniqueIdentifier>
     </Filter>
@@ -120,10 +123,16 @@
     <ClInclude Include="src\AGE\ImGui\ImGuiLayer.h">
       <Filter>src\AGE\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\AGE\Math\Math.h">
+      <Filter>src\AGE\Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\AGE\Renderer\Buffer.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\Camera.h">
+      <Filter>src\AGE\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Renderer\EditorCamera.h">
       <Filter>src\AGE\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Renderer\Framebuffer.h">
@@ -1461,8 +1470,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\AGE\Math\Math.h" />
-    <ClInclude Include="src\AGE\Renderer\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AGE\Core\Application.cpp">
@@ -1483,7 +1490,13 @@
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp">
       <Filter>src\AGE\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\AGE\Math\Math.cpp">
+      <Filter>src\AGE\Math</Filter>
+    </ClCompile>
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp">
+      <Filter>src\AGE\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Renderer\EditorCamera.cpp">
       <Filter>src\AGE\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\AGE\Renderer\Framebuffer.cpp">
@@ -1570,7 +1583,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\AGE\Math\Math.cpp" />
-    <ClCompile Include="src\AGE\Renderer\EditorCamera.cpp" />
   </ItemGroup>
 </Project>

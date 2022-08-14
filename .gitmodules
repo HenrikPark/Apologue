@@ -16,3 +16,6 @@
 [submodule "AGE/vendor/ImGuizmo"]
 	path = AGE/vendor/ImGuizmo
 	url = https://github.com/thecherno/imguizmo
+[submodule "age/vendor/BoX2D"]
+	path = age/vendor/BoX2D
+	url = https://github.com/thecherno/box2d
