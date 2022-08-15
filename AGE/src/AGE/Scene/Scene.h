@@ -18,6 +18,8 @@ namespace AGE
 		Scene();
 		~Scene();
 
+		static Ref<Scene> Copy(Ref<Scene> other);
+
 		Entity CreateEntity(const std::string& name = std::string());
 		Entity CreateEntityWithUUID(UUID uuid, const std::string& name = std::string());
 		void DestroyEntity(Entity entity);
@@ -28,6 +30,8 @@ namespace AGE
 		void OnUpdateRuntime(Timestep deltaTime);
 		void OnUpdateEditor(Timestep deltaTime, EditorCamera& camera);
 		void OnViewportResize(uint32_t width, uint32_t height);
+
+		void DuplicateEntity(Entity entity);
 
 		Entity GetPrimaryCameraEntity();
 	private:

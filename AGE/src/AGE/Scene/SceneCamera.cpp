@@ -31,6 +31,12 @@ namespace AGE
 
 	void SceneCamera::SetViewportSize(uint32_t width, uint32_t height)
 	{
+		if (width <= 0 || height <= 0)
+		{
+			width = 1920;
+			height = 1080;
+		}
+		AGE_CORE_ASSERT(width > 0 && height > 0, "Viewport is less than 0 in x or Y");
 		m_AspectRatio = (float)width / (float)height;
 		RecalculateProjection();
 	}
