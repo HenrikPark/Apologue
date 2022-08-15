@@ -155,6 +155,7 @@
     <ClInclude Include="src\AGE\Core\Log.h" />
     <ClInclude Include="src\AGE\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\AGE\Core\Timestep.h" />
+    <ClInclude Include="src\AGE\Core\UUID.h" />
     <ClInclude Include="src\AGE\Core\Window.h" />
     <ClInclude Include="src\AGE\Debug\Instrumentor.h" />
     <ClInclude Include="src\AGE\Events\ApplicationEvent.h" />
@@ -617,6 +618,7 @@
     <ClCompile Include="src\AGE\Core\Layer.cpp" />
     <ClCompile Include="src\AGE\Core\LayerStack.cpp" />
     <ClCompile Include="src\AGE\Core\Log.cpp" />
+    <ClCompile Include="src\AGE\Core\UUID.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\AGE\Math\Math.cpp" />

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AGE/Core/Timestep.h"
+#include "AGE/Core/UUID.h"
 #include "AGE/Renderer/EditorCamera.h"
 
 #include "entt.hpp"
@@ -18,6 +19,7 @@ namespace AGE
 		~Scene();
 
 		Entity CreateEntity(const std::string& name = std::string());
+		Entity CreateEntityWithUUID(UUID uuid, const std::string& name = std::string());
 		void DestroyEntity(Entity entity);
 
 		void OnRuntimeStart();
