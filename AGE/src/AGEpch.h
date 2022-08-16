@@ -5,13 +5,15 @@
 #include <utility>
 #include <algorithm>
 #include <functional>
-#include <sstream>
 
+#include <sstream>
 #include <string>
 #include <array>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
+//#include "AGE/Core/Base.h"
 
 #include "AGE/Core/Log.h"
 

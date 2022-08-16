@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>AGEpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;AGE_PLATFORM_WINDOWS;AGE_BUILD_DLL;GLFW_INCLUDE_NONE;AGE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;C:\VulkanSDK\1.2.170.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -90,7 +90,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;vendor\VulkanSDK\Lib\shaderc_sharedd.lib;vendor\VulkanSDK\Lib\spirv-cross-cored.lib;vendor\VulkanSDK\Lib\spirv-cross-glsld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -99,7 +99,7 @@
       <PrecompiledHeaderFile>AGEpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;AGE_PLATFORM_WINDOWS;AGE_BUILD_DLL;GLFW_INCLUDE_NONE;AGE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;C:\VulkanSDK\1.2.170.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -115,7 +115,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\spirv-cross-core.lib;C:\VulkanSDK\1.2.170.0\Lib\spirv-cross-glsl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -124,7 +124,7 @@
       <PrecompiledHeaderFile>AGEpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;AGE_PLATFORM_WINDOWS;AGE_BUILD_DLL;GLFW_INCLUDE_NONE;AGE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\Box2D\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\glm;vendor\stb_image;vendor\entt\include;vendor\yaml-cpp\include;vendor\ImGuizmo;C:\VulkanSDK\1.2.170.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -140,7 +140,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\spirv-cross-core.lib;C:\VulkanSDK\1.2.170.0\Lib\spirv-cross-glsl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -154,6 +154,7 @@
     <ClInclude Include="src\AGE\Core\LayerStack.h" />
     <ClInclude Include="src\AGE\Core\Log.h" />
     <ClInclude Include="src\AGE\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\AGE\Core\Timer.h" />
     <ClInclude Include="src\AGE\Core\Timestep.h" />
     <ClInclude Include="src\AGE\Core\UUID.h" />
     <ClInclude Include="src\AGE\Core\Window.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="src\AGE\Renderer\Shader.h" />
     <ClInclude Include="src\AGE\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\AGE\Renderer\Texture.h" />
+    <ClInclude Include="src\AGE\Renderer\UniformBuffer.h" />
     <ClInclude Include="src\AGE\Renderer\VertexArray.h" />
     <ClInclude Include="src\AGE\Scene\Components.h" />
     <ClInclude Include="src\AGE\Scene\Entity.h" />
@@ -193,6 +195,7 @@
     <ClInclude Include="src\Platform\OpenGl\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLTexture.h" />
+    <ClInclude Include="src\Platform\OpenGl\OpenGLUniformBuffer.h" />
     <ClInclude Include="src\Platform\OpenGl\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h" />
@@ -634,6 +637,7 @@
     <ClCompile Include="src\AGE\Renderer\Shader.cpp" />
     <ClCompile Include="src\AGE\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\AGE\Renderer\Texture.cpp" />
+    <ClCompile Include="src\AGE\Renderer\UniformBuffer.cpp" />
     <ClCompile Include="src\AGE\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\AGE\Scene\Entity.cpp" />
     <ClCompile Include="src\AGE\Scene\Scene.cpp" />
@@ -648,6 +652,7 @@
     <ClCompile Include="src\Platform\OpenGl\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLTexture.cpp" />
+    <ClCompile Include="src\Platform\OpenGl\OpenGLUniformBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGl\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp" />

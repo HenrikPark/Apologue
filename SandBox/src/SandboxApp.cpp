@@ -241,7 +241,7 @@ public:
 	}
 
 };
-AGE::Application* AGE::CreateApplication()
+AGE::Application* AGE::CreateApplication(ApplicationCommandLineArgs args)
 {
 	return new Sandbox();
 }

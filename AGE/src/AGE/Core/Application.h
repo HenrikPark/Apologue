@@ -14,10 +14,22 @@
 
 namespace AGE
 {
+	struct ApplicationCommandLineArgs
+	{
+		int Count = 0;
+		char** Args = nullptr;
+
+		const char* operator[](int index) const
+		{
+			AGE_CORE_ASSERT(index < Count,"Index is less than Count");
+			return Args[index];
+		}
+	};
+
 	class Application
 	{
 	public:
-		Application(const std::string& name = "AGE App");
+		Application(const std::string& name = "Hazel App", ApplicationCommandLineArgs args = ApplicationCommandLineArgs());
 		virtual ~Application();
 
 
@@ -34,6 +46,8 @@ namespace AGE
 
 		inline static Application& Get() { return *s_Instance; }
 
+		ApplicationCommandLineArgs GetCommandLineArgs() const { return m_CommandLineArgs; }
+
 		void Run();
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -47,11 +61,13 @@ namespace AGE
 
 		float m_LastFrameTime = 0.0f;
 	private:
+		ApplicationCommandLineArgs m_CommandLineArgs;
+	private:
 		static Application* s_Instance;
 	};
 
 	//To be Defined in client
-	Application* CreateApplication();
+	Application* CreateApplication(ApplicationCommandLineArgs args);
 
 }
 

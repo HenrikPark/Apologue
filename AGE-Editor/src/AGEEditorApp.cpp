@@ -9,8 +9,8 @@ namespace AGE
 	class AGEEditor : public Application
 	{
 	public:
-		AGEEditor()
-			: Application("AGE Editor")
+		AGEEditor(ApplicationCommandLineArgs args)
+			: Application("AGE-Editor", args)
 		{
 			PushLayer(new EditorLayer());
 		}
@@ -21,9 +21,9 @@ namespace AGE
 		}
 	};
 
-	Application* CreateApplication()
+	Application* CreateApplication(ApplicationCommandLineArgs args)
 	{
-		return new AGEEditor();
+		return new AGEEditor(args);
 	}
 }
 
