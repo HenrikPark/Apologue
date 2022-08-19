@@ -26,8 +26,12 @@ namespace AGE
 
 		void OnRuntimeStart();
 		void OnRuntimeStop();
+
+		void OnSimulationStart();
+		void OnSimulationStop();
 		
 		void OnUpdateRuntime(Timestep deltaTime);
+		void OnUpdateSimulation(Timestep deltaTime, EditorCamera& camera);
 		void OnUpdateEditor(Timestep deltaTime, EditorCamera& camera);
 		void OnViewportResize(uint32_t width, uint32_t height);
 
@@ -43,6 +47,11 @@ namespace AGE
 	private:
 		template<typename T>
 		void OnComponentAdded(Entity entity, T& component);
+
+		void OnPhysics2DStart();
+		void OnPhysics2DStop();
+
+		void RenderScene(EditorCamera& camera);
 
 	private:
 		entt::registry m_Registry;
