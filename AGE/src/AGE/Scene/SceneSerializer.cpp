@@ -307,6 +307,7 @@ namespace AGE
 		}
 		catch (YAML::ParserException e)
 		{
+			AGE_CORE_ERROR("Failed to load .AGE file '{0}'\n     {1}", filepath, e.what());
 			return false;
 		}
 

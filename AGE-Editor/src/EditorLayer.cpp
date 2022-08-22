@@ -378,7 +378,10 @@ namespace AGE
 	void EditorLayer::OnEvent(Event& e)
 	{
 		m_CameraController.OnEvent(e);
-		m_EditorCamera.OnEvent(e);
+		if (m_SceneState == SceneState::Edit)
+		{
+			m_EditorCamera.OnEvent(e);
+		}
 
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<KeyPressedEvent>(AGE_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
@@ -388,7 +391,7 @@ namespace AGE
 	bool EditorLayer::OnKeyPressed(KeyPressedEvent& e)
 	{
 		// Shortcuts
-		if (e.GetRepeatCount() > 0)
+		if (e.IsRepeat())
 			return false;
 
 		bool control = Input::IsKeyPressed(AGE_KEY_LEFT_CONTROL) || Input::IsKeyPressed(AGE_KEY_RIGHT_CONTROL);
@@ -457,6 +460,8 @@ namespace AGE
 				m_GizmoType = ImGuizmo::OPERATION::SCALE;
 			break;
 		}
+		default:
+			break;
 		}
 	}
 
@@ -533,7 +538,9 @@ namespace AGE
 
 	void EditorLayer::NewScene()
 	{
-		m_ActiveScene = CreateRef<Scene>();
+		m_EditorScene = CreateRef<Scene>();
+		m_ActiveScene = m_EditorScene;
+
 		m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
 		m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 
@@ -556,7 +563,7 @@ namespace AGE
 		{
 			AGE_WARN("Could not load {0} - not a scene file", path.filename().string());
 			return;
-		}
+		}	
 
 		Ref<Scene> newScene = CreateRef<Scene>();
 		SceneSerializer serializer(newScene);

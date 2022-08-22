@@ -7,7 +7,8 @@
 
 #include "Input.h"
 
-#include "GLFW/glfw3.h"
+#include "AGE/Utils/PlatformUtils.h"
+
 
 
 namespace AGE
@@ -84,7 +85,7 @@ namespace AGE
 		{	
 			AGE_PROFILE_SCOPE("RunLoop");
 
-			float time = (float)glfwGetTime();  //Should be Platform::GetTime()
+			float time = Time::GetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 

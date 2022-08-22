@@ -1,7 +1,5 @@
 #pragma once
 
-#include <xhash>
-
 namespace AGE
 {
 
@@ -21,13 +19,14 @@ namespace AGE
 
 namespace std
 {
+	template <typename T> struct hash;
 
 	template<>
 	struct hash<AGE::UUID>
 	{
 		std::size_t operator()(const AGE::UUID& uuid) const
 		{
-			return hash<uint64_t>()((uint64_t)uuid);
+			return (uint64_t)uuid;
 		}
 	};
 
