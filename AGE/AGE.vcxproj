@@ -622,12 +622,14 @@
     <ClCompile Include="src\AGE\Core\LayerStack.cpp" />
     <ClCompile Include="src\AGE\Core\Log.cpp" />
     <ClCompile Include="src\AGE\Core\UUID.cpp" />
+    <ClCompile Include="src\AGE\Core\Window.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\AGE\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\AGE\Math\Math.cpp" />
     <ClCompile Include="src\AGE\Renderer\Buffer.cpp" />
     <ClCompile Include="src\AGE\Renderer\EditorCamera.cpp" />
     <ClCompile Include="src\AGE\Renderer\Framebuffer.cpp" />
+    <ClCompile Include="src\AGE\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\AGE\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\AGE\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\AGE\Renderer\RenderCommand.cpp" />

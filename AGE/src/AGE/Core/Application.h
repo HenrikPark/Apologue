@@ -26,10 +26,17 @@ namespace AGE
 		}
 	};
 
+	struct ApplicationSpecification
+	{
+		std::string Name = "AGE Application";
+		std::string WorkingDirectory;
+		ApplicationCommandLineArgs CommandLineArgs;
+	};
+
 	class Application
 	{
 	public:
-		Application(const std::string& name = "Hazel App", ApplicationCommandLineArgs args = ApplicationCommandLineArgs());
+		Application(const ApplicationSpecification& specification);
 		virtual ~Application();
 
 
@@ -46,7 +53,7 @@ namespace AGE
 
 		inline static Application& Get() { return *s_Instance; }
 
-		ApplicationCommandLineArgs GetCommandLineArgs() const { return m_CommandLineArgs; }
+		const ApplicationSpecification& GetSpecification() const { return m_Specification; }
 
 		void Run();
 	private:
@@ -61,7 +68,7 @@ namespace AGE
 
 		float m_LastFrameTime = 0.0f;
 	private:
-		ApplicationCommandLineArgs m_CommandLineArgs;
+		ApplicationSpecification m_Specification;
 	private:
 		static Application* s_Instance;
 	};

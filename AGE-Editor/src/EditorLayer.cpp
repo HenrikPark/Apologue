@@ -40,7 +40,7 @@ namespace AGE
 		m_EditorScene = CreateRef<Scene>();		
 		m_ActiveScene = m_EditorScene;
 
-		auto commandLineArgs = Application::Get().GetCommandLineArgs();
+		auto commandLineArgs = Application::Get().GetSpecification().CommandLineArgs;
 		if (commandLineArgs.Count > 1)
 		{
 			auto sceneFilePath = commandLineArgs[1];
@@ -49,6 +49,7 @@ namespace AGE
 		}
 
 		m_EditorCamera = EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
+		Renderer2D::SetLineWidth(3.0f);
 	}
 
 	void EditorLayer::OnDetach()
@@ -531,6 +532,15 @@ namespace AGE
 					Renderer2D::DrawCircle(transform, glm::vec4(0, 1, 0, 1), 0.01f);
 				}
 			}
+		}
+
+		// Draw selected entity outline 
+		if (Entity selectedEntity = m_SceneHierarchyPanel.GetSelectedEntity())
+		{
+			const TransformComponent& transform = selectedEntity.GetComponent<TransformComponent>();
+
+			//Red
+			Renderer2D::DrawRect(transform.GetTransform(), glm::vec4(1, 0.5, 0, 1));
 		}
 
 		Renderer2D::EndScene();

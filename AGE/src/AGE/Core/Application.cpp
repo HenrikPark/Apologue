@@ -8,25 +8,30 @@
 #include "Input.h"
 
 #include "AGE/Utils/PlatformUtils.h"
+#include <filesystem>
 
 
 
 namespace AGE
 {
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application* Application::s_Instance = nullptr;	
 
-	Application::Application(const std::string& name, ApplicationCommandLineArgs args)
-		: m_CommandLineArgs(args)
+	Application::Application(const ApplicationSpecification& specification)
+		: m_Specification(specification)
 	{
 		AGE_PROFILE_FUNCTION();
 
 		AGE_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
-		m_Window = std::unique_ptr<Window>(Window::Create(WindowProps(name)));
+		// Set working directory here
+		if (!m_Specification.WorkingDirectory.empty())
+			std::filesystem::current_path(m_Specification.WorkingDirectory);
+
+		m_Window = Window::Create(WindowProps(m_Specification.Name));
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 		Renderer::Init();
