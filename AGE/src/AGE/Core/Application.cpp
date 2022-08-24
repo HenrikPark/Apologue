@@ -4,6 +4,7 @@
 #include "AGE/Core/Log.h"
 
 #include "AGE/Renderer/Renderer.h"
+#include "AGE/Scripting/ScriptEngine.h"
 
 #include "Input.h"
 
@@ -35,6 +36,7 @@ namespace AGE
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 		Renderer::Init();
+		ScriptEngine::Init();
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);		
@@ -42,6 +44,10 @@ namespace AGE
 
 	Application::~Application()
 	{
+		AGE_PROFILE_FUNCTION();
+
+		ScriptEngine::Shutdown();
+		//Renderer::Shutdown();
 	}
 	void Application::PushLayer(Layer* layer)
 	{

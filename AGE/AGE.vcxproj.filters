@@ -28,6 +28,9 @@
     <Filter Include="src\AGE\Scene">
       <UniqueIdentifier>{4675DC7E-B235-58B5-7B70-A132E7EF9C91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AGE\Scripting">
+      <UniqueIdentifier>{AB6915B5-1780-134B-60F7-9E6CCC4CE4D2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\AGE\Utils">
       <UniqueIdentifier>{89090A7F-F5C9-85B5-BE04-CF322A84CA91}</UniqueIdentifier>
     </Filter>
@@ -197,6 +200,9 @@
     </ClInclude>
     <ClInclude Include="src\AGE\Scene\ScriptableEntity.h">
       <Filter>src\AGE\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AGE\Scripting\ScriptEngine.h">
+      <Filter>src\AGE\Scripting</Filter>
     </ClInclude>
     <ClInclude Include="src\AGE\Utils\PlatformUtils.h">
       <Filter>src\AGE\Utils</Filter>
@@ -1567,6 +1573,9 @@
     </ClCompile>
     <ClCompile Include="src\AGE\Scene\SceneSerializer.cpp">
       <Filter>src\AGE\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AGE\Scripting\ScriptEngine.cpp">
+      <Filter>src\AGE\Scripting</Filter>
     </ClCompile>
     <ClCompile Include="src\AGEpch.cpp">
       <Filter>src</Filter>

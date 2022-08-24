@@ -40,6 +40,7 @@ project "AGE"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.mono}",
 		"%{IncludeDir.yaml_cpp}",
 		"%{IncludeDir.ImGuizmo}",
 		"%{IncludeDir.VulkanSDK}"
@@ -52,7 +53,9 @@ project "AGE"
 		"Glad",
 		"ImGui",
 		"yaml-cpp",
-		"opengl32.lib"
+		"opengl32.lib",
+		"%{Library.mono}"
+		
 	}
 
 	filter "files:vendor/ImGuizmo/**.cpp"
@@ -66,6 +69,13 @@ project "AGE"
 			"AGE_PLATFORM_WINDOWS",
 			"AGE_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
+		}
+		links
+		{
+			"%{Library.WinSock}",
+			"%{Library.WinMM}",
+			"%{Library.WinVersion}",
+			"%{Library.BCrypt}"
 		}
 
 	filter "configurations:Debug"

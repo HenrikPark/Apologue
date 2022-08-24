@@ -13,6 +13,7 @@ IncludeDir["ImGui"] = "%{wks.location}/AGE/vendor/ImGui"
 IncludeDir["ImGuizmo"] = "%{wks.location}/AGE/vendor/ImGuizmo"
 IncludeDir["glm"] = "%{wks.location}/AGE/vendor/glm"
 IncludeDir["entt"] = "%{wks.location}/AGE/vendor/entt/include"
+IncludeDir["mono"] = "%{wks.location}/AGE/vendor/mono/include"
 IncludeDir["shaderc"] = "%{wks.location}/AGE/vendor/shaderc/include"
 IncludeDir["SPIRV_Cross"] = "%{wks.location}/AGE/vendor/SPIRV-Cross"
 IncludeDir["VulkanSDK"] = "%{VULKAN_SDK}/Include"
@@ -20,8 +21,12 @@ IncludeDir["VulkanSDK"] = "%{VULKAN_SDK}/Include"
 LibraryDir = {}
 
 LibraryDir["VulkanSDK"] = "%{VULKAN_SDK}/Lib"
+LibraryDir["mono"] = "%{wks.location}/AGE/vendor/mono/lib/%{cfg.buildcfg}"
 
 Library = {}
+
+Library["mono"] = "%{LibraryDir.mono}/libmono-static-sgen.lib"
+
 Library["Vulkan"] = "%{LibraryDir.VulkanSDK}/vulkan-1.lib"
 Library["VulkanUtils"] = "%{LibraryDir.VulkanSDK}/VkLayer_utils.lib"
 
@@ -34,3 +39,8 @@ Library["ShaderC_Release"] = "%{LibraryDir.VulkanSDK}/shaderc_shared.lib"
 Library["SPIRV_Cross_Release"] = "%{LibraryDir.VulkanSDK}/spirv-cross-core.lib"
 Library["SPIRV_Cross_GLSL_Release"] = "%{LibraryDir.VulkanSDK}/spirv-cross-glsl.lib"
 
+-- Windows
+Library["WinSock"] = "Ws2_32.lib"
+Library["WinMM"] = "Winmm.lib"
+Library["WinVersion"] = "Version.lib"
+Library["BCrypt"] = "Bcrypt.lib"

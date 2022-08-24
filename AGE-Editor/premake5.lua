@@ -31,15 +31,18 @@ project "AGE-Editor"
 	filter "system:windows"
 		systemversion "latest"
 
+		defines
+		{
+			"AGE_PLATFORM_WINDOWS",
+			"AGE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"		
+		}
+
 	filter "configurations:Debug"
 		defines "AGE_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
-		defines
-		{
-			"AGE_PLATFORM_WINDOWS"			
-		}
 
 	filter "configurations:Release"
 		defines "AGE_RELEASE"

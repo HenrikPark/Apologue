@@ -33,6 +33,15 @@ group "Dependencies"
 	include "AGE/vendor/yaml-cpp"
 group ""
 
-include "AGE"
-include "Sandbox"
-include "AGE-Editor"
+group "Core"
+	include "AGE"
+	include "AGE-ScriptCore"
+group ""
+
+group "Tools"
+	include "AGE-Editor"
+group ""
+
+group "Misc"
+	include "Sandbox"
+group ""
